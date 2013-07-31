@@ -52,7 +52,9 @@
      <div class="sixteen columns">
 				<div class="menu-container clearfix">
 					<nav id="navigation" class="navigation">
-					  <?php print render($page['menu']); ?>
+					  <div class="menu">
+					    <?php print render($page['menu']); ?>
+					  </div>  
 					</nav>
 					
 					<div class="search-wrapper">
