@@ -152,17 +152,3 @@
 	</footer>
 	
 </div>	
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.modernizr.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.easing.1.3.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/layerslider/js/jquerytransit.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/layerslider/js/layerslider.transitions.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.cycle.all.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.blackandwhite.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.jcarousel.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.jflickrfeed.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/fancybox/jquery.fancybox.pack.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/jquery.touchswipe.min.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/config.js"></script>
-<script src="<?php global $parent_root; echo $parent_root; ?>/js/custom.js"></script>

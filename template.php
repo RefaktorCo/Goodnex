@@ -6,7 +6,14 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
 
-
+/* Update Drupal's version of jQuery */
+function goodnex_js_alter(&$js) {
+  if (isset($js['misc/jquery.js'])) {
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.8.2';
+    $js['misc/jquery.js']['data'] = $jsPath;
+  }
+}
 
 function goodnex_html_head_alter(&$head_elements) {
 	unset($head_elements['system_meta_generator']);
@@ -98,18 +105,6 @@ function goodnex_menu_link(array $variables) {
 
 function goodnex_menu_tree(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
-}
-
-/**
- * Allow sub-menu items to be displayed.
- */
-function goodnex_links($variables) {
-  if (array_key_exists('id', $variables['attributes']) && $variables['attributes']['id'] == 'main-menu-links') {
-  	$pid = variable_get('menu_main_links_source', 'main-menu');
-	$tree = menu_tree($pid);
-	return drupal_render($tree);
-  }
-  return theme_links($variables);
 }
 
 
