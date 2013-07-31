@@ -5,6 +5,7 @@ engine = phptemplate
 version = 1.0 ALPHA
 
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/skeleton.css
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/font-awesome.css
@@ -24,5 +25,4 @@ regions[footer_2] = Footer Box 2
 regions[footer_3] = Footer Box 3
 regions[footer_4] = Footer Box 4
 
-regions[footer_bottom_left] = Footer Bottom Left
-regions[footer_bottom_right] = Footer Bottom Right
+regions[footer_bottom] = Footer Bottom

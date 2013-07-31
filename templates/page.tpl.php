@@ -136,21 +136,16 @@
 	    </div>
 
       <div class="clear"></div>
-
-	    <div class="eight columns">
-	    
-			  <?php if (isset($page['footer_bottom_left'])) : ?>
-			    <?php print render($page['footer_bottom_left']); ?>
-			  <?php endif; ?>
-	  
-	    </div>
-	    <div class="eight columns">
-	    
-			  <?php if (isset($page['footer_bottom_right'])) : ?>
-			    <?php print render($page['footer_bottom_right']); ?>
-			  <?php endif; ?>
-	  
-	    </div>
+      
+      <div class="sixteen columns">
+        <div class="adjective clearfix">
+		   		    
+				  <?php if (isset($page['footer_bottom'])) : ?>
+				    <?php print render($page['footer_bottom']); ?>
+				  <?php endif; ?>
+		  
+		    </div>
+      </div>
 	  </div>  
 	</footer>
 	
