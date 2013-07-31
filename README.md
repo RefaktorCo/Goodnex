@@ -1,4 +1,0 @@
-Goodnex
-=======
-
-Goodnex Drupal
