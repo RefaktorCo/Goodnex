@@ -57,7 +57,7 @@
 					  </div>  
 					</nav>
 					
-			
+					<div class="search-wrapper">
 
 						<?php
           $block = module_invoke('search', 'block_view', 'search');
@@ -66,7 +66,7 @@
 
 					</div><!--/ .search-wrapper--> 
 					
-			
+				</div>
      </div>
      
     </div>  				
