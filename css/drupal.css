@@ -5,3 +5,7 @@
 .md-slide-wrap {
 	margin-top: 20px;
 }
+
+.search-wrapper .submit-search input[type="submit"] {
+  display: none;
+}

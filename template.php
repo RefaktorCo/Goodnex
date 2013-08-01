@@ -54,6 +54,7 @@ function goodnex_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#size'] = 40;  // define size of the textfield
     $form['search_block_form']['#default_value'] = t('Search'); // Set a default value for the textfield
     $form['actions']['submit'] =  array(
+      '#type' => 'submit',
     	'#prefix' => '<button type="submit" class="submit-search">',
     	'#suffix' => '</button>',
     	'#markup' => 'search',
