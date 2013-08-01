@@ -17,6 +17,7 @@ scripts[] = js/custom.js
 regions[header_left] = Header Left
 regions[header_right] = Header Right
 regions[menu] = Menu
+regions[search] = Search
 
 regions[before_content] = Before Content
 regions[content] = Content

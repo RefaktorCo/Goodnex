@@ -57,20 +57,16 @@
 					  </div>  
 					</nav>
 					
-					<div class="search-wrapper">
+			
 
-						<form method="post" action="/">
-
-							<p>
-								<input name="s" id="s" type="text">
-								<button type="submit" class="submit-search">Search</button>
-							</p>
-
-						</form>
+						<?php
+          $block = module_invoke('search', 'block_view', 'search');
+          print render($block); 
+?>
 
 					</div><!--/ .search-wrapper--> 
 					
-				</div>
+			
      </div>
      
     </div>  				

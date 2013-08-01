@@ -1,3 +1,7 @@
 .hidden {
 	display: none;
 }
+
+.md-slide-wrap {
+	margin-top: 20px;
+}
