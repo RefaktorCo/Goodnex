@@ -8,6 +8,7 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/skeleton.css
 stylesheets[all][] = css/layout.css
+stylesheets[all][] = js/fancybox/jquery.fancybox.css
 stylesheets[all][] = css/font-awesome.css
 
 scripts[] = js/jquery.modernizr.js
@@ -17,6 +18,8 @@ scripts[] = js/jquery.blackandwhite.min.js
 scripts[] = js/jquery.jcarousel.min.js
 scripts[] = js/jquery.jflickrfeed.min.js
 scripts[] = js/jquery.touchswipe.min.js
+scripts[] = js/jquery.isotope.min.js
+scripts[] = js/fancybox/jquery.fancybox.pack.js
 scripts[] = js/config.js
 scripts[] = js/custom.js
 

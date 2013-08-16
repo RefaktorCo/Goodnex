@@ -32,9 +32,7 @@
   <?php print $header; ?>
 <?php endif; ?>
 	
-<div class="row">
-	<!-- portfolio mason one uses ul id masonic -->
-	<ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+<section id="portfolio-items" class="portfolio-items clearfix">
 	  <?php print render($title_prefix); ?>
 	  <?php print render($title_suffix); ?>
 	  <?php if ($exposed): ?>
@@ -82,5 +80,4 @@
 	      <?php print $feed_icon; ?>
 	    </div>
 	  <?php endif; ?>
-	</ul>
 </div>

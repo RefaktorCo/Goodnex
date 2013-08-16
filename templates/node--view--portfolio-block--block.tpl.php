@@ -1,14 +1,16 @@
-<li class="<?php echo theme_get_setting('portfolio_columns');?> isotope-item <?php print str_replace(' ', '-', strip_tags(render($content['field_portfolio_category']))); ?>">
-	<div class="portfolio-item thumbnail">
-		<a href="<?php print $node_url; ?>" class="thumb-info">
-			<?php print render ($content['field_image']); ?>
-			<span class="thumb-info-title">
-				<span class="thumb-info-inner"><?php print $title; ?></span>
-				<span class="thumb-info-type"><?php print strip_tags(render($content['field_portfolio_category'])); ?></span>
-			</span>
-			<span class="thumb-info-action">
-				<span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon-link"></i></span>
-			</span>
-		</a>
-	</div>
-</li>
+<article class="four columns" data-categories="<?php print strip_tags(render($content['field_portfolio_category'])); ?>">
+
+	<div class="preloader">
+		<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" rel="folio">
+			<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
+		</a>							
+	</div><!--/ .preloader-->
+
+	<a class="project-meta" href="<?php echo $node_url; ?>">
+
+		<h6 class="title"><?php print $title ;?></h6>
+		<span class="categories"><?php print strip_tags(render($content['field_portfolio_category'])); ?></span>
+
+	</a><!--/ .project-meta-->						
+
+</article><!--/ .columns-->
