@@ -71,9 +71,11 @@
      
     </div>  				
 	</header>
-	<?php print render($page['before_content']); ?>
+	<?php print render($page['before_content_no_wrap']); ?>
   <section id="content">
 	  <div class="container">
+	    
+	    <?php print render($page['before_content']); ?>
 	   
 		  <div class="<?php if ( ($page['sidebar']) ) { echo "twelve columns";}  else { echo "sixteen columns"; } ?>">
 				  

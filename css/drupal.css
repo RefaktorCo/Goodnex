@@ -4,6 +4,11 @@
 
 .md-slide-wrap {
 	margin-top: 20px;
+	margin-bottom: 45px;
+}
+
+.search-wrapper input[type="text"] {
+  height: 20px;
 }
 
 .search-wrapper .submit-search input[type="submit"] {

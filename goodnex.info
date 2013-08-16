@@ -19,6 +19,7 @@ regions[header_right] = Header Right
 regions[menu] = Menu
 regions[search] = Search
 
+regions[before_content_no_wrap] = Before Content No Wrap
 regions[before_content] = Before Content
 regions[content] = Content
 regions[after_content] = After Content
