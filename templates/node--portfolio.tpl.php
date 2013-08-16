@@ -43,3 +43,6 @@ if ($prev != NULL) {
   hide($content['field_portfolio_category']);
   print render($content);
 ?>
+
+<div class="clear"></div>
+<div class="divider-solid"></div>
