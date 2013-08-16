@@ -9,7 +9,7 @@
 	<a class="project-meta" href="<?php echo $node_url; ?>">
 
 		<h6 class="title"><?php print $title ;?></h6>
-		<span class="categories"><?php print strip_tags(render($content['field_portfolio_category'])); ?></span>
+		<span class="categories"><?php print str_replace(' ', ' / ', strip_tags(render($content['field_portfolio_category']))); ?></span>
 
 	</a><!--/ .project-meta-->						
 

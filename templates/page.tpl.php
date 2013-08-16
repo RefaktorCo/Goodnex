@@ -74,6 +74,12 @@
 	<?php print render($page['before_content_no_wrap']); ?>
   <section id="content">
 	  <div class="container">
+	  
+	    <div class="page-header clearfix">
+
+				<h1><?php print $title; ?></h1>
+
+			</div><!--/ .page-header-->
 	    
 	    <?php print render($page['before_content']); ?>
 	   

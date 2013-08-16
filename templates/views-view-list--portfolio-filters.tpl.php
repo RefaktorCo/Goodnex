@@ -11,7 +11,7 @@
 ?>
 
 <ul id="portfolio-filter" class="portfolio-filter clearfix">
-  <li data-option-value="*" class="active"><a href="#"><?php echo t('All'); ?></a></li>
+  <li><a data-categories="*"><?php echo t('All'); ?></a></li>
   <?php foreach ($rows as $id => $row): ?>
     <?php print $row; ?>
   <?php endforeach; ?>
