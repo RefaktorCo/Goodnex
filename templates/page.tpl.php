@@ -77,13 +77,15 @@
 	  
 	    <div class="page-header clearfix">
 
-				<h1><?php print $title; ?></h1>
+				<h1 class="alignleft"><?php print $title; ?></h1>
 
 			</div><!--/ .page-header-->
 	    
 	    <?php print render($page['before_content']); ?>
 	   
-		  <div class="<?php if ( ($page['sidebar']) ) { echo "twelve columns";}  else { echo "sixteen columns"; } ?>">
+	    <?php if ( ($page['sidebar']) ): ?>
+		  <section id="main" class="twelve columns">
+		  <?php endif; ?>
 				  
 			  <?php print $messages; ?>
 			  
@@ -101,12 +103,14 @@
 	
 			  <?php if (isset($page['content'])) { print render($page['content']); } ?>
 			  
-			</div>
+			<?php if ( ($page['sidebar']) ): ?>
+		  </section>
+		  <?php endif; ?>
 		  
 		  <?php if ( ($page['sidebar']) ) : ?>
-		  <div class="four columns">
+		  <aside id="sidebar" class="four columns">
 		    <?php print render($page['sidebar']); ?>
-		  </div>
+		  </aside>
 		  <?php endif; ?>
 		    
     </div>

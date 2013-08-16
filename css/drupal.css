@@ -14,3 +14,9 @@
 .search-wrapper .submit-search input[type="submit"] {
   display: none;
 }
+
+.portfolio-controls {
+	margin-top: -125px;
+	position: absolute;
+	right: 10px;
+}

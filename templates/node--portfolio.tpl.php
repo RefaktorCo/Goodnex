@@ -1,3 +1,9 @@
+<div class="portfolio-controls">
+	<a class="controls-prev">Prev</a>
+	<a class="controls-all" href="portfolio-4-columns.html">all</a>
+	<a class="controls-next">Next</a>
+</div><!--/ .portfolio-controls-->	
+
 
 <div class="image-gallery-slider">
   <ul>
