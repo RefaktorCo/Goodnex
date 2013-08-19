@@ -27,6 +27,7 @@
  * @ingroup views_templates
  */
 ?>
+<div class="divider-solid"></div>
 <div class="jcarousel-container">
   <h4 class="content-title">Recent Works</h4>
   <ul data-scroll-count="1" data-auto="7" class="projects-carousel clearfix">

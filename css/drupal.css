@@ -20,3 +20,13 @@
 	position: absolute;
 	right: 10px;
 }
+
+.contextual-links-region { 
+  overflow: auto;
+}
+
+.author span {
+	float: none;
+	display: inline;
+	margin-right: 0px;
+}
