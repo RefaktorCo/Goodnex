@@ -25,6 +25,11 @@
   overflow: auto;
 }
 
+.entry-meta span {
+  font-size: 11px;
+  color: #b2b2b2;
+}
+
 .author span {
 	float: none;
 	display: inline;

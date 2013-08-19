@@ -19,7 +19,9 @@
     <div class="entry-meta">
 			<span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span>
 			<span class="author"><?php echo t('By'); ?> <?php print $name; ?></span>
-			<span class="tag"><a href="#">Design </a>, <a href="#">Web</a></span>
+			<?php if (render($content['field_tags'])): ?>  
+			  <span class="tag"><?php print render($content['field_tags']); ?></span>
+			<?php endif; ?>  
 			<span class="comments"><a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
 		</div><!--/ .entry-meta-->
   <?php endif; ?>
