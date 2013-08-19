@@ -9,12 +9,14 @@ stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/skeleton.css
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = js/fancybox/jquery.fancybox.css
+stylesheets[all][] = js/mediaelement/jquery.mediaelementplayer.css
 stylesheets[all][] = css/font-awesome.css
 
 scripts[] = js/jquery.modernizr.js
 scripts[] = js/jquery.easing.1.3.min.js
 scripts[] = js/jquery.cycle.all.min.js
 scripts[] = js/jquery.blackandwhite.min.js
+scripts[] = js/mediaelement/mediaelement-and-player.min.js
 scripts[] = js/jquery.jcarousel.min.js
 scripts[] = js/jquery.jflickrfeed.min.js
 scripts[] = js/jquery.touchswipe.min.js

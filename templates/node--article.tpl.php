@@ -4,15 +4,20 @@
  * @file node.tpl.php
  * Goodnex's template to display a node.
  */
+ 
+$uid = user_load($node->uid);
+
+if (module_exists('profile2')) {  
+  $profile = profile2_load_by_user($uid, 'main');
+} 
+ 
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print $user_picture; ?>
-
   <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
+  
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
+ 
   <?php print render($title_suffix); ?>
 
   <?php if ($display_submitted): ?>
@@ -35,8 +40,36 @@
     ?>
   </div>
 
-  <?php print render($content['links']); ?>
+  <?php if($teaser): ?>
+	  	<a class="button default small" href="<?php print $node_url;?>">read more</a>
+	<?php endif;?>
+	
+	<?php if(!$teaser): ?>
+	<div class="author-about">
+
+		<div class="author-thumb">
+
+			<div class="bordered">
+				<div class="avatar">
+				  <?php print $user_picture; ?>
+				</div>
+			</div><!--/ .bordered-->
+
+		</div><!--/ .author-thumb-->
+
+		<div class="author-entry">
+
+			<h5><?php echo t('About the Author'); ?></h5>
+
+			<p>
+				<?php if (isset($profile->field_bio['und'][0]['value'])): ?>
+          <?php print ($profile->field_bio['und'][0]['value']); ?>
+        <?php endif; ?>			</p>
+
+		</div><!--/ .author-entry-->
+
+	</div><!--/ .about-author-->
+	<?php endif;?>
 
   <?php print render($content['comments']); ?>
-
 </div>
