@@ -10,9 +10,34 @@ $uid = user_load($node->uid);
 if (module_exists('profile2')) {  
   $profile = profile2_load_by_user($uid, 'main');
 } 
+$image_slide = "";
+
+if ($items = field_get_items('node', $node, 'field_image')) {
+  if (count($items) == 1) {
+    $image_slide = 'false';
+  }
+  elseif (count($items) > 1) {
+    $image_slide = 'true';
+  }
+}
  
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+
+  <?php if ( ($image_slide == 'true') ): ?>
+	  <div class="image-post-slider">
+		  <ul>
+			  <?php if (render($content['field_image'])) : ?>
+			    <?php print render($content['field_image']); ?>
+			  <?php endif; ?>
+		  </ul>  
+		</div>
+	<?php endif; ?>
+			
+	<?php if ($image_slide == 'false'): ?>
+		<?php print render($content['field_image']); ?>
+	<?php endif; ?>
+		
   <div class="entry">
   <?php print render($title_prefix); ?>
   
