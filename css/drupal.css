@@ -81,3 +81,9 @@ input#edit-subject.form-text:before {
 .single-post-image li {
 	list-style: none;
 }
+
+#sidebar h2 {
+	margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}

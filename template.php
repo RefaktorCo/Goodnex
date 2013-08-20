@@ -177,8 +177,8 @@ function goodnex_item_list($vars) {
     unset($vars['attributes']['class']);
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
-        $item['class'] = array('page-numbers current');
-        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+        $item['class'] = array('');
+        $item['data'] = '<a href="#" class="page-numbers current">' . $item['data'] . '</a>';
       }
       
       elseif (in_array('pager-item', $item['class'])) {
@@ -186,10 +186,7 @@ function goodnex_item_list($vars) {
         $item['data'] = '<a href="#">' . $item['data'] . '</a>';
       }
       
-      elseif (in_array('pager-next', $item['class'])) {
-        $item['class'] = array('next page-numbers');
-        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
-      }
+     
       
       elseif (in_array('pager-last', $item['class'])) {
         $item['class'] = array('page-numbers');
