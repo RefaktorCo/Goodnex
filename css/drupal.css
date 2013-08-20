@@ -87,3 +87,34 @@ input#edit-subject.form-text:before {
   font-size: 14px;
   font-weight: 600;
 }
+
+/* Popular tags view*/
+#block-views-popular-tags-block {
+	margin-bottom: 45px !important;
+}
+
+.view-popular-tags .item-list ul li {
+  list-style: none;
+  display: inline;
+  float: left;
+  margin: 0;
+}
+
+.view-popular-tags a {
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;	
+	background-color: #676767;
+  color: #d4d4d4 !important;
+  display: inline-block;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  padding: 5px;
+  font-size: 12px !important;
+}
+
+.view-popular-tags a:hover {
+  background-color: #c2c2c2 !important;
+	color: #383838 !important;
+}
