@@ -39,3 +39,13 @@
 	display: inline;
 	margin-right: 0px;
 }
+
+.comment-date {
+	margin-right: 10px;
+  color: #b2b2b2;
+  font-size: 11px;
+}
+
+.indented {
+  margin-left: 70px;
+}
