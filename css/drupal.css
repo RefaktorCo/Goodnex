@@ -49,3 +49,25 @@
 .indented {
   margin-left: 70px;
 }
+
+.comments-content-wrap {
+	margin-top: 10px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #ebebeb;
+}
+
+.comments-list {
+	border-bottom: none;
+	margin-bottom: 0px;
+}
+
+.comments-list .comment:first-child {
+  border-top-width: 1px;
+}
+
+#comments:first-child {
+	display: none;
+}

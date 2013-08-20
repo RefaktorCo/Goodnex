@@ -12,7 +12,9 @@
     <?php print render($title_suffix); ?>
   <?php endif; ?>
   
-  <?php print render($content['comments']); ?>
+  <div class="comments-content-wrap">
+    <?php print render($content['comments']); ?>
+  </div>  
 
   <?php if ($content['comment_form']): ?>
   <div class="post-block post-leave-comment">
