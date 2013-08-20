@@ -177,15 +177,36 @@ function goodnex_item_list($vars) {
     unset($vars['attributes']['class']);
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
-        $item['class'] = array('active');
+        $item['class'] = array('page-numbers current');
         $item['data'] = '<a href="#">' . $item['data'] . '</a>';
       }
+      
+      elseif (in_array('pager-item', $item['class'])) {
+        $item['class'] = array('page-numbers');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+      
+      elseif (in_array('pager-next', $item['class'])) {
+        $item['class'] = array('next page-numbers');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+      
+      elseif (in_array('pager-last', $item['class'])) {
+        $item['class'] = array('page-numbers');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+      
+      elseif (in_array('pager-previous', $item['class'])) {
+        $item['class'] = array('prev page-numbers');
+        $item['data'] = '<a href="#">' . $item['data'] . '</a>';
+      }
+      
       elseif (in_array('pager-ellipsis', $item['class'])) {
         $item['class'] = array('disabled');
         $item['data'] = '<a href="#">' . $item['data'] . '</a>';
       }
     }
-    return '<div class="pagination pagination-large pull-right">' . theme_item_list($vars) . '</div>';
+    return '<div class="wp-pagenavi clearfix">' . theme_item_list($vars) . '</div>';
   }
   return theme_item_list($vars);
 }

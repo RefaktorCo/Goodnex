@@ -35,7 +35,11 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	<?php endif; ?>
 			
 	<?php if ($image_slide == 'false'): ?>
-		<?php print render($content['field_image']); ?>
+	  <div class="preloader">
+			<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
+				<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
+			</a>						
+		</div>
 	<?php endif; ?>
 		
   <div class="entry">
@@ -61,6 +65,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
+      hide($content['field_image']);
       print render($content);
     ?>
   </div>

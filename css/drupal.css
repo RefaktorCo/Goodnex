@@ -77,3 +77,7 @@ input#edit-subject.form-text:before {
   font-size: 14px;
   font-weight: 600;
 }
+
+.single-post-image li {
+	list-style: none;
+}
