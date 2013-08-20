@@ -12,8 +12,8 @@ if (module_exists('profile2')) {
 } 
  
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <div class="entry">
   <?php print render($title_prefix); ?>
   
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -70,6 +70,7 @@ if (module_exists('profile2')) {
 
 	</div><!--/ .about-author-->
 	<?php endif;?>
+  </div>
 
   <?php print render($content['comments']); ?>
-</div>
+</article>

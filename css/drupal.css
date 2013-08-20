@@ -68,6 +68,6 @@
   border-top-width: 1px;
 }
 
-#comments:first-child {
-	display: none;
+input#edit-subject.form-text:before {
+	content: "\f007";
 }

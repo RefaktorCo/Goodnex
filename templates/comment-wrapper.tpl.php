@@ -8,7 +8,7 @@
 
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
     <?php print render($title_prefix); ?>
-    	<h3><?php print t('Comments'); ?> (<?php print $node->comment_count; ?>)</h3>
+    	<h6><?php print $node->comment_count; ?> <?php print t('Comments'); ?> </h6>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
   
@@ -19,7 +19,7 @@
   <?php if ($content['comment_form']): ?>
   <div class="post-block post-leave-comment">
     <section id="comment-form-wrapper">
-      <h3><?php print t('Leave a comment'); ?></h3>
+      <h6><?php print t('Leave a comment'); ?></h6>
       <?php print render($content['comment_form']); ?>
     </section> <!-- /#comment-form-wrapper -->
   </div>  
