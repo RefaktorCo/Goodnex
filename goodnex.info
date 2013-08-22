@@ -9,6 +9,7 @@ stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/skeleton.css
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = js/fancybox/jquery.fancybox.css
+stylesheets[all][] = js/flexslider/css/flexslider.css
 stylesheets[all][] = js/mediaelement/jquery.mediaelementplayer.css
 stylesheets[all][] = css/font-awesome.css
 
@@ -22,6 +23,7 @@ scripts[] = js/jquery.jflickrfeed.min.js
 scripts[] = js/jquery.touchswipe.min.js
 scripts[] = js/jquery.isotope.min.js
 scripts[] = js/fancybox/jquery.fancybox.pack.js
+scripts[] = js/flexslider/js/jquery.flexslider-min.js
 scripts[] = js/config.js
 scripts[] = js/custom.js
 

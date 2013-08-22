@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @file
- * Main view template.
+ * @file views-view--flexslider.tpl.php
+ * Contour's views template for the Flexslider view.
  *
  * Variables available:
  * - $classes_array: An array of classes determined in
@@ -27,6 +27,14 @@
  * @ingroup views_templates
  */
 ?>
+<div class="slider">
+		
+		<div class="container">
+				
+			<div class="sixteen columns">
+<div class="flexslider">
+  <ul class="slides">
+	   
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
@@ -51,8 +59,9 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-   
-    <?php print $rows; ?>
+    <ul class="slides">
+      <?php print $rows; ?>
+	  </ul>
 
   <?php elseif ($empty): ?>
     <div class="view-empty">
@@ -85,3 +94,8 @@
       <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
+  </ul>  
+</div>
+			</div>
+		</div>
+</div>
