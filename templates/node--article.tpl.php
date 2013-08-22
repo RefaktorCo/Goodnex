@@ -41,6 +41,12 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 			</a>						
 		</div>
 	<?php endif; ?>
+	
+	<?php if (render($content['field_before_title'])) : ?>
+	  
+	    <?php print render($content['field_before_title']); ?>
+
+	<?php endif; ?>
 		
   <div class="entry">
   <?php print render($title_prefix); ?>
