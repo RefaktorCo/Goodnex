@@ -2074,7 +2074,7 @@ body.boxed { background-attachment: fixed; }
 			.wp-pagenavi .first,
 			.wp-pagenavi .last,
 			.wp-pagenavi .next { 
-				font-size: 11px !important;
+				font-size: 10px !important;
 				vertical-align: middle;
 			}
 
