@@ -1,6 +1,11 @@
+.comments-content-wrap ol:first-of-type li {
+	border-top: none;
+}
+
 .comment-form input[type="text"] {
 	width: 50%;
 	float: left;
+	padding-left: 30px;
 }
 
 .filter-help {
@@ -11,7 +16,6 @@
 .filter-wrapper .form-item, .filter-guidelines { 
 	padding: 0;
 }
-
 
 .filter-help a {
 	padding: 0px 20px 0px 0px;
@@ -25,7 +29,7 @@
   font-family: "FontAwesome";
   font-size: 14px;
   position: absolute;
-  padding: 5px 0px;
+  padding: 4px 0px;
   left: 20px;
 }
 
@@ -35,6 +39,10 @@
 
 .comment-form .form-textarea-wrapper {
 	width: 60%;
+}
+
+.comment-form .form-textarea-wrapper textarea {
+	padding-left: 30px;
 }
 
 .form-item-name, .form-item-subject {
@@ -49,11 +57,11 @@
 	margin-bottom: 10px;
 }
 
-.form-item-name:before { 
+#comments .form-item-name:before { 
 	content: "\f007";
 }
 
-.form-item-subject:before { 
+#comments .form-item-subject:before { 
 	content: "\f0e0";
 }
 
@@ -125,6 +133,12 @@ overflow: hidden;
 
 .indented {
   margin-left: 70px;
+}
+
+.indented .comment {
+	border-top-width: 1px !important;
+  border-top-style: solid !important;
+  border-top-color: #ebebeb !important;
 }
 
 .comments-content-wrap {
