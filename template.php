@@ -186,10 +186,18 @@ function goodnex_item_list($vars) {
         $item['data'] =  $item['data'];
       }
       
-     
+      elseif (in_array('pager-next', $item['class'])) {
+        $item['class'] = array('next page-numbers');
+        $item['data'] =  $item['data'];
+      }
       
       elseif (in_array('pager-last', $item['class'])) {
         $item['class'] = array('page-numbers');
+        $item['data'] =  $item['data'];
+      }
+      
+      elseif (in_array('pager-first', $item['class'])) {
+        $item['class'] = array('page-numbers first');
         $item['data'] =  $item['data'];
       }
       

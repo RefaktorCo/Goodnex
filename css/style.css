@@ -2071,13 +2071,15 @@ body.boxed { background-attachment: fixed; }
 		}
 
 			.wp-pagenavi .prev,
+			.wp-pagenavi .first,
+			.wp-pagenavi .last,
 			.wp-pagenavi .next { 
-				font-size: 15px;
+				font-size: 11px !important;
 				vertical-align: middle;
 			}
 
-			.wp-pagenavi .prev:after { content: "←"; }
-			.wp-pagenavi .next:after { content: "→"; }
+			.wp-pagenavi .prev:after { }
+			.wp-pagenavi .next:after {  }
 	
 	/* -------------------------------------------------- */
 	/*	About Author
