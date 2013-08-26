@@ -84,6 +84,11 @@ input#edit-subject.form-text:before {
 	color: #ebebeb;
   font-size: 14px;
   font-weight: 600;
+  clear: both;
+}
+
+#footer .content {
+	overflow: auto;
 }
 
 .single-post-image li {
