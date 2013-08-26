@@ -1,4 +1,23 @@
-.comment-form .form-item:before, #comment-body-add-more-wrapper:before {
+.comment-form input[type="text"] {
+	width: 50%;
+	float: left;
+}
+
+.filter-help {
+  float: none;
+  padding: 0;
+}
+
+.filter-wrapper .form-item, .filter-guidelines { 
+	padding: 0;
+}
+
+
+.filter-help a {
+	padding: 0px 20px 0px 0px;
+}
+
+.comment-form .form-item-name:before, .comment-form .form-item-subject:before, #comment-body-add-more-wrapper:before {
 	 display: inline-block;
   color: #b4b4b4;
   font-weight: normal;
@@ -6,9 +25,29 @@
   font-family: "FontAwesome";
   font-size: 14px;
   position: absolute;
-  padding: 22px 10px;
+  padding: 5px 0px;
+  left: 20px;
 }
 
+.comment-form .form-actions input[type='submit'] {
+	margin-right: 10px;
+}
+
+.comment-form .form-textarea-wrapper {
+	width: 60%;
+}
+
+.form-item-name, .form-item-subject {
+	margin-bottom: 15px !important;
+}
+
+.form-item-name label, .form-item-subject label {
+	padding: 5px 0px 0px 5px;
+}
+
+.comment-form .form-item {
+	margin-bottom: 10px;
+}
 
 .form-item-name:before { 
 	content: "\f007";
@@ -22,7 +61,7 @@
 	content: "\f040";
 }
 
-#comment-body-add-more-wrapper .form-item label {
+#comment-body-add-more-wrapper .form-type-textarea label {
 	display: none;
 }
 

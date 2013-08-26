@@ -26,6 +26,7 @@ scripts[] = js/fancybox/jquery.fancybox.pack.js
 scripts[] = js/flexslider/js/jquery.flexslider-min.js
 scripts[] = js/config.js
 scripts[] = js/custom.js
+scripts[] = js/goodnex.js
 
 regions[header_left] = Header Left
 regions[header_right] = Header Right
