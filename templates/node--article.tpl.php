@@ -72,6 +72,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
       hide($content['comments']);
       hide($content['links']);
       hide($content['field_image']);
+      hide($content['field_widget_image']);
       print render($content);
     ?>
   </div>

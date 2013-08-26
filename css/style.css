@@ -2037,7 +2037,19 @@ body.boxed { background-attachment: fixed; }
 	/*	Pagenavi
 	/* -------------------------------------------------- */
 	
-		.wp-pagenavi .page-numbers {
+	  .wp-pagenavi .page-numbers-current{
+			display: block;
+			float: left;
+			margin-right: 2px;
+			width: 31px;
+			height: 31px;
+			background-color: #e9e9e9;
+			color: #373737;
+			text-align: center;
+			line-height: 31px;
+		}
+	
+		.wp-pagenavi .page-numbers a{
 			display: block;
 			float: left;
 			margin-right: 2px;
