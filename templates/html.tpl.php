@@ -23,6 +23,7 @@
 	<!-- Web Fonts  -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600italic|Handlee' rel='stylesheet' type='text/css'>
 
+
 </head>
 
 <body class="<?php print $classes; ?> wide normal pattern-1 color-1" <?php print $attributes;?>>

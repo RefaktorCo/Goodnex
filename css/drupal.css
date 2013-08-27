@@ -8,6 +8,12 @@
 	padding-left: 30px;
 }
 
+.contact-form input[type="text"] {
+	width: 70%;
+	float: left;
+	padding-left: 30px;
+}
+
 .filter-help {
   float: none;
   padding: 0;
@@ -21,7 +27,7 @@
 	padding: 0px 20px 0px 0px;
 }
 
-.comment-form .form-item-name:before, .comment-form .form-item-subject:before, #comment-body-add-more-wrapper:before {
+.comment-form .form-item-name:before, .comment-form .form-item-subject:before, #comment-body-add-more-wrapper:before, .contact-form .form-item-name:before, .contact-form .form-item-mail:before, .contact-form .form-item-subject:before {
 	 display: inline-block;
   color: #b4b4b4;
   font-weight: normal;
@@ -45,7 +51,7 @@
 	padding-left: 30px;
 }
 
-.form-item-name, .form-item-subject {
+.comment-form .form-item-name, .comment-form .form-item-subject, .contact-form .form-item-name, .contact-form .form-item-subject, .contact-form .form-item-mail {
 	margin-bottom: 15px !important;
 }
 
@@ -57,12 +63,16 @@
 	margin-bottom: 10px;
 }
 
-#comments .form-item-name:before { 
+#comments .form-item-name:before, .contact-form .form-item-name:before { 
 	content: "\f007";
 }
 
-#comments .form-item-subject:before { 
-	content: "\f0e0";
+.contact-form .form-item-mail:before { 
+  content: "\f0e0";
+}
+
+#comments .form-item-subject:before, .contact-form .form-item-subject:before { 
+	content: "\f0e5";
 }
 
 #comment-body-add-more-wrapper:before {
