@@ -134,76 +134,6 @@ Goodnex also includes support for a "Related Projects" block that you can use to
 <li>/templates/views/views-view-fields--portfolio-filters.tpl.php</li>
 </ul>
 
-<h4>Team</h4>
-
-<p><strong>Team Block - Example: <a href="http://refaktorthemes.com/Goodnex/team" target="_blank"> http://refaktorthemes.com/Goodnex/team</a></strong></p>
-
-<img src="images/Goodnex-team.png"><br/><br/>
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
-<li><strong>Portfolio Category:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
-<li><strong>Team Bio:</strong> A text field used to enter a short description about the team member.</li>
-<li><strong>Facebook Link:</strong> Used to add a link to the team member's Facebook page.</li>
-<li><strong>Twitter Link:</strong> Used to add a link to the team member's Twitter page.</li>
-<li><strong>LinkedIn Link:</strong> Used to add a link to the team member's LinkedIn page.</li>
-</ul>
-
-<p>Somewhat similar to the Portfolio, the Team block can be used to showcase your site or company's team members. If you are not using the full demo or did not use the Custom Content module you can use the code in /views_exports/team.txt to import this View. Then simply place the "View: Team" in the Content region and configure the block visibility settings to your liking.</p>
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--view--team--block.tpl.php</li>
-<li>/templates/views/views-view--team.tpl.php</li>
-</ul>
-
-<h4>Team Filters:</h4>
-<p>The Team block view also includes support for an Isotope filter effect powered by Taxonomy terms. To utilize this effect visit /admin/structure/taxonomy and create a new vocabulary (example: Team). After creating your vocabulary you can create the terms you wish to use to categorize your portfolio items. This taxonomy vocabulary can be linked to the Team content type via a term reference field so you can select the category or categories you want to place your items into.</p>
-
-<p>The filters are powered by a View called Team Filters that is placed in the View header as a global view area. If you don't already have this view you can use the code in /views_exports/team-filters.txt to import as a View for placement in the View header of the Team view.</p>
-
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/views/views-view-list--team-filters.tpl.php</li>
-<li>/templates/views/views-view-fields--team-filters.tpl.php</li>
-</ul>
-
-<h4>Carousel</h4>
-<img src="images/Goodnex-carousel.png"><br/><br/>
-<p>This content type lets you create a Flexslider-powered image carousel. It utilizes just the standard Image field (field_image) set to allow an unlimited number of images. </p>
-
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Image:</strong> The default Image field used for uploading the images.</li>
-</ul>
-
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--carousel.tpl.php</li>
-<li>/templates/views/views-view--client-carousel.tpl.php</li>
-<li>/templates/views/views-view-unformatted--client-carousel.tpl.php</li>
-</ul>
-
-<p>The export code /views-exports/carousel.txt can be used to create the Carousel View which uses a Block display. This block can then be added to the region of your choice.</p>
-
-<h4>Testimonials</h4>
-<img src="images/Goodnex-testimonials.png"><br/><br/>
-<p><strong>Fields:</strong></p>
-<ul>
-<li><strong>Testimonial Content:</strong> Used for the written content of the testimonial.</li>
-<li><strong>Testimonial Image:</strong> The default Image field used for uploading the testimonial author's image.</li>
-<li><strong>Testimonial Name:</strong> A text field for the name of the testimonial's author.</li>
-<li><strong>Testimonial Info:</strong> A text field for adding additional info about the testimonial's author such as their company or organization.</li>
-</ul>
-
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--testimonials.tpl.php</li>
-<li>/templates/views/views-view--testimonials.tpl.php</li>
-<li>/templates/views/views-view-unformatted--testimonials.tpl.php</li>
-</ul>
-
-<p>The export code /views-exports/testimonials.txt can be used to create the Testimonials View which uses a Block display. This block can then be added to the region of your choice.</p>
-
 <h4>FAQ</h4>
 <img src="images/Goodnex-faq.png"><br/><br/>
 
@@ -220,28 +150,6 @@ Goodnex also includes support for a "Related Projects" block that you can use to
 </ul>
 
 <p>The export code /views-exports/faq.txt can be used to create the FAQ View which uses a Block display. This block can then be added to the region of your choice.</p>
-
-<h4>Parallax</h4>
-<img src="images/Goodnex-parallax.png"><br/><br/>
-
-<p><strong>Fields:</strong></p>
-<ul>
-<li>Background Image: The standard image field for uploading the image background for your Parallax content.</li>
-<li>Parallax Icon: Add a Font Awesome icon class to use in your Block. Classes can be found <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">here.</a></li>
-<li>Big Caption: Use this field to add a large size caption to your content.</li>
-<li>Small Caption: Use this field to add a small size caption to your content.</li>
-<li>Text Color: select either black or white text color.</li>
-<li>Parallax Category: term reference field to add a taxonomy term association with your Parallax content..</li>
-</ul>
-
-<p><strong>Template files</strong></p>
-<ul>
-<li>/templates/node/node--parallax.tpl.php</li>
-<li>/templates/views/views-view--parallax.tpl.php</li>
-<li>/templates/views/views-view-unformatted--parallax.tpl.php</li>
-</ul>
-
-<p>The export code /views-exports/parallax.txt can be used to create the Parallax View which uses a Block displays. These blocks can then be added to the region of your choice.</p>
 
 <h2>Blog (posts)</h2>
 <p>The Goodnex demo uses a View to display the article content type nodes. If you do not already have this View using one of our different installation methods you can use the code found in /views-exports/blog.txt to import the View and all its settings. To change the style of image on that View page you can use the Blog View Image option in the theme settings (/admin/appearance/settings/Goodnex).</p>
@@ -282,113 +190,17 @@ Goodnex also includes support for a "Related Projects" block that you can use to
 <pre>
 &lt;script&gt;
 	jQuery(document).ready(function ($) {
-		$('ul.flickr-feed').jflickrfeed({
-			limit: 6,
-			qstrings: {
-				id: '93691989@N03'
-			},
-			itemTemplate: '&lt;li&gt;&lt;a rel=&quot;flickr[pp_gal]&quot; href=&quot;{{image_b}}&quot;&gt;&lt;span class=&quot;thumbnail&quot;&gt;&lt;img alt=&quot;{{title}}&quot; src=&quot;{{image_s}}&quot; /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;'
+		$('ul.flickr-badge').jflickrfeed({
+
+		limit: 6, // Max 9
+		qstrings: {id : '54958895@N06'}, // ID
+		itemTemplate: '&lt;li&gt;&lt;a class=&quot;badge&quot; target=&quot;_blank&quot; href=&quot;{{image_b}}&quot; href=&quot;#&quot;&gt;&lt;img src=&quot;{{image_s}}&quot; alt=&quot;{{title}}&quot; /&gt;&lt;/a&gt;&lt;/li&gt;'
 	  });
+	  
 	});
 &lt;/script&gt;
 </pre>
-<h4>Twitter Widget</h4>
-<p>Before you can use the Twitter widget you need to configure the Twitter options in the theme settings (/admin/appearance/settings/Goodnex). To get the necessary authentication keys you must visit <a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a> and log in with your Twitter account. Once there you can create an app and generate the OAuth keys needed to enter into the theme settings. Once you have those entered you can use the following markup in a Block (make sure to set the text filter to PHP code):</p>
-<pre>
-&lt;h6 class=&quot;whitetext bold meta&quot;&gt;GoodnexON TWITTER&lt;/h6&gt;
-&lt;div class='tweet query midtoppadding'&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-                        
-    jQuery(document).ready(function ($) {
-      
-      $(&quot;.tweet&quot;).tweet({
-        modpath: '&lt;?php global $theme_root; echo $theme_root;?&gt;/includes/twitter/',
-        username: &quot;envato&quot;,
-        avatar_size: 34,
-        count: 3,
-        loading_text: &quot;loading tweets...&quot;
-      });
-    
-    });
-    
-  &lt;/script&gt;
-</pre>
-<h4>Lightbox</h4>
-<p>The following is an example of how you can create a very simple image lightbox in your node content:</p>
-<pre>
-&lt;a class=&quot;thumbnail lightbox pull-left&quot;	href=&quot;path/to/img.jpg&quot; data-plugin-options='{&quot;type&quot;:&quot;image&quot;}'&gt;
-	&lt;img src=&quot;path/to/img.jpg&quot;&gt;
-	&lt;span class=&quot;zoom&quot;&gt;
-		&lt;i class=&quot;icon-16 icon-white-shadowed icon-search&quot;&gt;&lt;/i&gt;
-	&lt;/span&gt;
-&lt;/a&gt;
-</pre>
-<h4>Social Icons</h4>
-<p>You can easily display social icons with a roll-over effect with the following markup:</p>
-<pre>
-&lt;div class=&quot;social-icons&quot;&gt;
-	&lt;ul class=&quot;social-icons&quot;&gt;
-		&lt;li class=&quot;facebook&quot;&gt;&lt;a href=&quot;http://www.facebook.com/&quot; target=&quot;_blank&quot; title=&quot;Facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;twitter&quot;&gt;&lt;a href=&quot;http://www.twitter.com/&quot; target=&quot;_blank&quot; title=&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-		&lt;li class=&quot;linkedin&quot;&gt;&lt;a href=&quot;http://www.linkedin.com/&quot; target=&quot;_blank&quot; title=&quot;Linkedin&quot;&gt;Linkedin&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/div&gt;
-</pre>
 
-<p>Here is a list of the following icons that are supported:</p>
-<ul>
-<li>digg</li>
-<li>dribble</li>
-<li>facebook</li>
-<li>flickr</li>
-<li>forrst</li>
-<li>googleplus</li>
-<li>html5</li>
-<li>icloud</li>
-<li>lastfm</li>
-<li>linkedin</li>
-<li>myspace</li>
-<li>paypal</li>
-<li>picasa</li>
-<li>pinterest</li>
-<li>reddit</li>
-<li>rss</li>
-<li>skype</li>
-<li>stumbleupon</li>
-<li>tumblr</li>
-<li>twitter</li>
-<li>vimeo</li>
-<li>wordpress</li>
-<li>yahoo</li>
-<li>youtube</li>
-<li>github</li>
-<li>behance</li>
-<li>yelp</li>
-<li>mail</li>
-<li>instagram</li>
-<li>foursqaure</li>
-<li>zerply</li>
-</ul>
-<h4>Toggle</h4>
-<p>If you want to manually create a toggle section like the FAQ page you can use the following markup:</p>
-<pre>
-&lt;div class=&quot;toogle&quot;&gt;
-	&lt;section class=&quot;toggle active&quot;&gt;
-		&lt;label&gt;Curabitur eget leo at velit imperdiet vague iaculis vitaes?&lt;/label&gt;
-		&lt;div class=&quot;toggle-content&quot;&gt;
-			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc.&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/section&gt;
-	&lt;section class=&quot;toggle&quot;&gt;
-		&lt;label&gt;Curabitur eget leo at imperdiet vague iaculis vitaes?&lt;/label&gt;
-		&lt;div class=&quot;toggle-content&quot;&gt;
-			&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa.&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/section&gt;
-&lt;/div&gt;
-</pre>
-<h4>CSS3 Animations</h4>
-<p>Version 1.1.2 of the theme introduced support for CSS3 animations which can be seen here on our <a href="http://refaktorthemes.com/Goodnex/animations" target="_blank">demo></a>. Please refer to the /examples/animations.php file for code examples for each of the animations.</p>
 <h2>Thank You</h2>
 <p>Thank you very much for purchasing the Goodnex Responsive Drupal 7 theme. Once again if you have any issues or feedback please connect via the <a href="http://themeforest.net/user/refaktor#from" target="_blank">ThemeForest author page</a>. Enjoy using Goodnex!</p>
 </p>&copy 2013 Refaktor.
