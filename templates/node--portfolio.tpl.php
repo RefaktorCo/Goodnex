@@ -45,4 +45,3 @@ if ($prev != NULL) {
 ?>
 
 <div class="clear"></div>
-<div class="divider-solid"></div>

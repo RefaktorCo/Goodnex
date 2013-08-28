@@ -1,3 +1,15 @@
+#google_map {
+	margin-bottom: 20px;
+}
+
+header h1 {
+	margin-bottom: 0px;
+}
+
+#block-views-detail-boxes-block .content {
+	overflow: hidden;
+}
+
 .comments-content-wrap ol:first-of-type li {
 	border-top: none;
 }
