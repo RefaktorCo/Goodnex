@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="<?php print $classes; ?> wide normal pattern-1 color-1" <?php print $attributes;?>>
+<body class="<?php print $classes; ?> <?php print theme_get_setting('site_layout'); ?> normal pattern-1 <?php print theme_get_setting('color_scheme'); ?> " <?php print $attributes;?>>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>

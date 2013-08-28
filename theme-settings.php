@@ -33,12 +33,43 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Color'),
   );  
   
-    // Custom Background Color
-    $form['options']['color']['skin_color'] =array(
-      '#type' => 'jquery_colorpicker',
-	    '#title' => t('Color Scheme'),
-	    '#default_value' => theme_get_setting('skin_color'),
-    ); 
+    // Color Scheme
+      $form['options']['color']['color_scheme'] = array(
+        '#type' => 'select',
+        '#title' => 'Color Scheme',
+        '#default_value' => theme_get_setting('color_scheme'),
+        '#options' => array(
+          'color-1' => t('Light Green (default)'),
+          'color-2' => t('Light Blue'),
+          'color-3' => t('Purple'),
+          'color-4' => t('Dark Blue'),
+          'color-5' => t('Dark Green'),
+          'color-6' => t('Teal'),
+          'color-7' => t('Yellow'),
+          'color-8' => t('Light Orange'),
+          'color-9' => t('Dark Orange'),
+          'color-10' => t('Pink'),
+          'color-11' => t('Maroon'),
+          'color-12' => t('Brown'),
+          'color-13' => t('Taupe'),
+          'color-14' => t('Grey'),
+          'color-15' => t('Red'),
+          'color-16' => t('Navy Blue'),
+          'custom' => t('Custom'),
+        ),
+      );
+      
+      // Custom Color
+      $form['options']['color']['custom_color'] = array(
+		    '#type' => 'jquery_colorpicker',
+		    '#title' => t('Color'),
+		    '#default_value' => theme_get_setting('custom_color'),
+		    '#states' => array (
+          'visible' => array(
+            'select[name=color_scheme]' => array('value' => 'custom')
+          )
+        )
+      ); 
     
   // Layout
   $form['options']['layout'] = array(
