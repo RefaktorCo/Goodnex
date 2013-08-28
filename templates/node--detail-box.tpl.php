@@ -19,3 +19,5 @@
 	</div><!--/ .detail-box-->
 
 </div><!--/ .columns-->
+
+<?php print render($content['field_detail_color']); ?>
