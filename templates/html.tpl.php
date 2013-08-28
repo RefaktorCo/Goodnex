@@ -25,6 +25,10 @@
 
 <?php goodnex_user_css(); ?>  
 
+<?php global $user; if ( (theme_get_setting('sticky_header') == '1') AND ( !user_is_logged_in() ) ): ?>
+	<script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/js/sticky.js'></script>
+	<?php endif; ?>
+
 </head>
 
 <body class="<?php print $classes; ?> <?php print theme_get_setting('site_layout'); ?> normal <?php print theme_get_setting('background_select'); ?> <?php print theme_get_setting('color_scheme'); ?> " <?php print $attributes;?>>
