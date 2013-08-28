@@ -132,40 +132,6 @@
 		/* end Layer Slider */
 
 		/* ---------------------------------------------------- */
-		/* Flickr												*/
-		/* ---------------------------------------------------- */
-
-		(function () {
-
-			if ($('.flickr-badge').length) {
-
-				var $flickr = $('.flickr-badge');
-				$flickr.jflickrfeed(objFlickr, function () {
-
-					var $bwWrapper = jQuery('.badge');
-					
-					
-					if (Modernizr.touch) {
-
-						$(win).load(function () {
-							$bwWrapper.BlackAndWhite(objBlackAndWhiteTouch);
-						});	
-
-					} else {
-
-						$(win).load(function () {
-							$bwWrapper.BlackAndWhite(objBlackAndWhite);
-						});	
-
-					}	
-				});
-			}
-
-		}());
-
-		/* end Flickr */
-
-		/* ---------------------------------------------------- */
 		/*	Tabs												*/
 		/* ---------------------------------------------------- */
 
