@@ -31,7 +31,7 @@
 
 </head>
 
-<body class="<?php print $classes; ?> <?php print theme_get_setting('site_layout'); ?> normal <?php print theme_get_setting('background_select'); ?> <?php print theme_get_setting('color_scheme'); ?> " <?php print $attributes;?>>
+<body class="<?php print $classes; ?> <?php print theme_get_setting('site_layout'); ?> <?php print theme_get_setting('skin_style'); ?> <?php print theme_get_setting('background_select'); ?> <?php print theme_get_setting('color_scheme'); ?> " <?php print $attributes;?>>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>

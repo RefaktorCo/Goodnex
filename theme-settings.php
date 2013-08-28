@@ -88,6 +88,17 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     );
     
+    // Site Layout
+    $form['options']['layout']['skin_style'] = array(
+      '#type' => 'select',
+      '#title' => t('Skin Style'),
+      '#default_value' => theme_get_setting('skin_style'),
+      '#options' => array(
+        'normal' => t('Normal (default)'),
+        'scribble' => t('Scribble'),
+      ),
+    );
+    
   //Background
     $form['options']['layout']['background'] = array(
       '#type' => 'fieldset',
