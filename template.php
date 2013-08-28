@@ -350,7 +350,27 @@ function goodnex_preprocess_html(&$vars){
     )
   );
   
+  $custom_color = array(
+    '#type' => 'markup',
+    '#markup' => "<style type='text/css'>.navigation > div > ul > li:hover > a, .navigation > div > ul > li.current-menu-item > a, .navigation > div > ul > li.current-menu-parent > a, .navigation > div > ul > li.current-menu-ancestor > a, .navigation > div > ul > li.current_page_item > a, .navigation > div > ul > li.current_page_parent > a, .navigation > div > ul > li.current_page_ancestor > a, .color-12.scribble .projects-carousel li:hover > a:after, .simple-pricing-table.type-2 .featured .price, .color-12.scribble article:hover .project-meta:after, .simple-pricing-table .featured .button, .jta-tweet-list-controls span:hover, .simple-pricing-table.type-1 .title, .gallery-slider-nav:hover a:hover, .color-12.scribble .team-entry:hover:after, .color-12.scribble .tabs-nav .active:after, .post-slider-nav:hover a:hover, .flex-direction-nav a:hover, .portfolio-controls a:hover, .acc-trigger.active:before, #layerslider .inline-h2, .detail-box .transform, .ajax-nav li:hover > a, .jcarousel-prev:hover, .jcarousel-next:hover, .wp-pagenavi .current, .button.default:hover, .flexslider .caption, .ajax-nav .current a, 
+ul.type-1 li:before, .quotes-nav a:hover, #back-top:hover, .dropcap.color, i.small-arrows, .curtain {background: #".theme_get_setting('custom_color')." !important;}</style> ",
+  );
+  
+  $background_color = array(
+    '#type' => 'markup',
+    '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important; background-image: none !important;}</style> ",
+    '#weight' => 8,
+  );
+  
   drupal_add_html_head( $viewport, 'viewport');
+  
+  if (theme_get_setting('color_scheme') == "custom") {
+    drupal_add_html_head( $custom_color, 'custom_color' );
+  }
+  
+  if (theme_get_setting('body_background') == "custom_background_color") {
+    drupal_add_html_head( $background_color, 'background_color');
+  }
 
 }
 

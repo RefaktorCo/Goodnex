@@ -9,76 +9,64 @@
 	font-size: 30px;
 }
 
-label[for=edit-background-select-az-subtle] {
-	background-image: url('../img/patterns/az_subtle.png');
+label[for=edit-background-select-pattern-1] {
+	background-image: url('../images/patterns/pattern-1.png');
 }
 
-label[for=edit-background-select-blizzard] {
-	background-image: url('../img/patterns/blizzard.png');
+label[for=edit-background-select-pattern-2] {
+	background-image: url('../images/patterns/pattern-2.png');
 }
 
-label[for=edit-background-select-bright-squares] {
-	background-image: url('../img/patterns/bright_squares.png');
+label[for=edit-background-select-pattern-3] {
+	background-image: url('../images/patterns/pattern-3.png');
 }
 
-label[for=edit-background-select-denim] {
-	background-image: url('../img/patterns/denim.png');
+label[for=edit-background-select-pattern-4] {
+	background-image: url('../images/patterns/pattern-4.png');
 }
 
-label[for=edit-background-select-fancy-deboss] {
-	background-image: url('../img/patterns/fancy_deboss.png');
+label[for=edit-background-select-pattern-5] {
+	background-image: url('../images/patterns/pattern-5.png');
 }
 
-label[for=edit-background-select-gray-jean] {
-	background-image: url('../img/patterns/gray_jean.png');
+label[for=edit-background-select-pattern-6] {
+	background-image: url('../images/patterns/pattern-6.png');
 }
 
-label[for=edit-background-select-honey-im-subtle] {
-	background-image: url('../img/patterns/honey_im_subtle.png');
+label[for=edit-background-select-pattern-7] {
+	background-image: url('../images/patterns/pattern-7.png');
 }
 
-label[for=edit-background-select-linedpaper] {
-	background-image: url('../img/patterns/linedpaper.png');
+label[for=edit-background-select-pattern-8] {
+	background-image: url('../images/patterns/pattern-8.png');
 }
 
-label[for=edit-background-select-linen] {
-	background-image: url('../img/patterns/linen.png');
+label[for=edit-background-select-pattern-9] {
+	background-image: url('../images/patterns/pattern-9.png');
 }
 
-label[for=edit-background-select-pw-maze-white] {
-	background-image: url('../img/patterns/pw_maze_white.png');
+label[for=edit-background-select-pattern-10] {
+	background-image: url('../images/patterns/pattern-10.png');
 }
 
-label[for=edit-background-select-random-grey-variations] {
-	background-image: url('../img/patterns/random_grey_variations.png');
+label[for=edit-background-select-pattern-11] {
+	background-image: url('../images/patterns/pattern-11.png');
 }
 
-label[for=edit-background-select-skin-side-up] {
-	background-image: url('../img/patterns/skin_side_up.png');
+label[for=edit-background-select-pattern-12] {
+	background-image: url('../images/patterns/pattern-12.png');
 }
 
-label[for=edit-background-select-stitched-wool] {
-	background-image: url('../img/patterns/stitched_wool.png');
+label[for=edit-background-select-pattern-13] {
+	background-image: url('../images/patterns/pattern-13.png');
 }
 
-label[for=edit-background-select-straws] {
-	background-image: url('../img/patterns/straws.png');
+label[for=edit-background-select-pattern-14] {
+	background-image: url('../images/patterns/pattern-14.png');
 }
 
-label[for=edit-background-select-subtle-grunge] {
-	background-image: url('../img/patterns/subtle_grunge.png');
-}
-
-label[for=edit-background-select-textured-stripes] {
-	background-image: url('../img/patterns/textured_stripes.png');
-}
-
-label[for=edit-background-select-wild-oliva] {
-	background-image: url('../img/patterns/wild_oliva.png');
-}
-
-label[for=edit-background-select-worn-dots] {
-	background-image: url('../img/patterns/worn_dots.png');
+label[for=edit-background-select-pattern-15] {
+	background-image: url('../images/patterns/pattern-15.png');
 }
 
 #edit-background-select {

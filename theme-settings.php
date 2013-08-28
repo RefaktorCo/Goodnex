@@ -10,7 +10,7 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_tab' => 'defaults',
     '#weight' => '-10',
     '#attached' => array(
-      'css' => array(drupal_get_path('theme', 'porto') . '/css/theme-settings.css'),
+      'css' => array(drupal_get_path('theme', 'goodnex') . '/css/theme-settings.css'),
     ),
   );
   
@@ -105,38 +105,36 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
       '#title' => t('Body Background'),
       '#default_value' => theme_get_setting('body_background'),
       '#options' => array(
-        'porto_backgrounds' => t('Background Image (default)'),
+        'goodnex_backgrounds' => t('Background Image (default)'),
         'custom_background_color' => t('Background Color'),
       ),
     );
     
-    // Porto Background Choices
+    // goodnex Background Choices
     $form['options']['layout']['background']['background_select'] = array(
       '#type' => 'radios',
       '#title' => t('Select a background pattern:'),
       '#default_value' => theme_get_setting('background_select'),
       '#options' => array(
-        'az_subtle' => 'item',
-        'blizzard' => 'item',
-        'bright_squares' => 'item',
-        'denim' => 'item',
-        'fancy_deboss' => 'item',
-        'gray_jean' => 'item',
-        'honey_im_subtle' => 'item',
-        'linen' => 'item',
-        'pw_maze_white' => 'item',
-        'random_grey_variations' => 'item',
-        'skin_side_up' => 'item',
-        'stitched_wool' => 'item',
-        'straws' => 'item',
-        'subtle_grunge' => 'item',
-        'textured_stripes' => 'item',
-        'wild_oliva' => 'item',
-        'worn_dots' => 'item',
+        'pattern-1' => 'item',
+        'pattern-2' => 'item',
+        'pattern-3' => 'item',
+        'pattern-4' => 'item',
+        'pattern-5' => 'item',
+        'pattern-6' => 'item',
+        'pattern-7' => 'item',
+        'pattern-8' => 'item',
+        'pattern-9' => 'item',
+        'pattern-10' => 'item',
+        'pattern-11' => 'item',
+        'pattern-12' => 'item',
+        'pattern-13' => 'item',
+        'pattern-14' => 'item',
+        'pattern-15' => 'item',
       ),
       '#states' => array (
           'visible' => array(
-            'select[name=body_background]' => array('value' => 'porto_backgrounds')
+            'select[name=body_background]' => array('value' => 'goodnex_backgrounds')
           )
         )
       );  

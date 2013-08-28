@@ -23,10 +23,11 @@
 	<!-- Web Fonts  -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600italic|Handlee' rel='stylesheet' type='text/css'>
 
+<?php goodnex_user_css(); ?>  
 
 </head>
 
-<body class="<?php print $classes; ?> <?php print theme_get_setting('site_layout'); ?> normal pattern-1 <?php print theme_get_setting('color_scheme'); ?> " <?php print $attributes;?>>
+<body class="<?php print $classes; ?> <?php print theme_get_setting('site_layout'); ?> normal <?php print theme_get_setting('background_select'); ?> <?php print theme_get_setting('color_scheme'); ?> " <?php print $attributes;?>>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>
