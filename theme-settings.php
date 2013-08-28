@@ -77,6 +77,17 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Layout'),
   );  
   
+    // Skin Style
+    $form['options']['layout']['skin_style'] = array(
+      '#type' => 'select',
+      '#title' => t('Skin Style'),
+      '#default_value' => theme_get_setting('skin_style'),
+      '#options' => array(
+        'normal' => t('Normal (default)'),
+        'scribble' => t('Scribble'),
+      ),
+    );
+  
     // Site Layout
     $form['options']['layout']['site_layout'] = array(
       '#type' => 'select',
@@ -87,19 +98,8 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
         'boxed' => t('Boxed'),
       ),
     );
-    
-    // Site Layout
-    $form['options']['layout']['skin_style'] = array(
-      '#type' => 'select',
-      '#title' => t('Skin Style'),
-      '#default_value' => theme_get_setting('skin_style'),
-      '#options' => array(
-        'normal' => t('Normal (default)'),
-        'scribble' => t('Scribble'),
-      ),
-    );
-    
-  //Background
+        
+   //Background
     $form['options']['layout']['background'] = array(
       '#type' => 'fieldset',
       '#title' => '<h3 class="options_heading">Background</h3>',
@@ -121,7 +121,7 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
       ),
     );
     
-    // goodnex Background Choices
+    // Background Choices
     $form['options']['layout']['background']['background_select'] = array(
       '#type' => 'radios',
       '#title' => t('Select a background pattern:'),
@@ -168,9 +168,9 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Portfolio Columns'),
         '#default_value' => theme_get_setting('portfolio_columns'),
         '#options' => array(
-          'span6' => 'Two',
-          'span4' => 'Three',
-          'span3' => 'Four (default)',
+          'eight columns' => 'Two',
+          'one-third column' => 'Three',
+          'four columns' => 'Four (default)',
         ),
       ); 
     

@@ -47,3 +47,7 @@ regions[footer_3] = Footer Box 3
 regions[footer_4] = Footer Box 4
 
 regions[footer_bottom] = Footer Bottom
+
+; Define theme setting defaults.
+settings[sticky_header] = 1
+settings[site_layout] = wide

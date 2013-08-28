@@ -1,4 +1,4 @@
-<article class="four columns" data-categories="<?php print strip_tags(render($content['field_portfolio_category'])); ?>">
+<article class="<?php echo theme_get_setting('portfolio_columns');?>" data-categories="<?php print strip_tags(render($content['field_portfolio_category'])); ?>">
 
 	<div class="preloader">
 		<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" rel="folio">
