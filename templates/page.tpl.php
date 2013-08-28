@@ -124,11 +124,13 @@
 		    <?php print render($page['sidebar_right']); ?>
 		  </aside>
 		  <?php endif; ?>
+		  
+		  <?php print render($page['after_content']); ?>
 		    
     </div>
   </section> 
  
-  <?php print render($page['after_content']); ?>
+  <?php print render($page['after_content_no_wrap']); ?>
 
   <footer id="footer">
     <div class="container">

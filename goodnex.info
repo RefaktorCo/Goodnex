@@ -38,6 +38,7 @@ regions[before_content_no_wrap] = Before Content No Wrap
 regions[before_content] = Before Content
 regions[content] = Content
 regions[after_content] = After Content
+regions[after_content_no_wrap] = After Content No Wrap
 
 regions[sidebar_left] = Left Sidebar
 regions[sidebar_right] = Right Sidebar
