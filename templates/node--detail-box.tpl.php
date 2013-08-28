@@ -14,10 +14,9 @@
 
 		</div><!--/ .detail-entry-->
 
-		<div data-color-state="" data-color-hover="" class="transform mixed-bg-1"></div>
+		<div data-color-state="<?php if (render($content['field_detail_color'])): ?>#<?php print render($content['field_detail_color']); ?> <?php endif; ?>" data-color-hover="" class="transform"></div>
 
 	</div><!--/ .detail-box-->
 
 </div><!--/ .columns-->
 
-<?php print render($content['field_detail_color']); ?>
