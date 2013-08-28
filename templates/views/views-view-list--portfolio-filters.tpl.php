@@ -2,7 +2,7 @@
 
 /**
  * @file views-view-list--portfolio-filters.tpl.php
- * Porto's list template file for the Portfolio Filters view.
+ * Goodnex's list template file for the Portfolio Filters view.
  *
  * - $title : The title of this group of rows.  May be empty.
  * - $options['type'] will either be ul or ol.
