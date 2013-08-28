@@ -39,7 +39,8 @@ regions[before_content] = Before Content
 regions[content] = Content
 regions[after_content] = After Content
 
-regions[sidebar] = Sidebar
+regions[sidebar_left] = Left Sidebar
+regions[sidebar_right] = Right Sidebar
 
 regions[footer_1] = Footer Box 1
 regions[footer_2] = Footer Box 2

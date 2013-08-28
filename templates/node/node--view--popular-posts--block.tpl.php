@@ -13,4 +13,3 @@
 		<span><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span>
 	</div><!--/ .post-holder-->
 </li>
-

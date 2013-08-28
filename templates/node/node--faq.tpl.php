@@ -13,4 +13,3 @@
 <div class="acc-container">
 	<p><?php print render($content['body']); ?></p>
 </div>
-

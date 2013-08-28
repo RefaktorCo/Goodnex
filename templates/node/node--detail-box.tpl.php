@@ -19,4 +19,3 @@
 	</div><!--/ .detail-box-->
 
 </div><!--/ .columns-->
-

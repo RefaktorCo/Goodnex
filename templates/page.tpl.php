@@ -84,11 +84,21 @@
 			<?php endif; ?>
 	    
 	    <?php print render($page['before_content']); ?>
+	    
+	    <?php if ( ($page['sidebar_left']) ) : ?>
+		  <aside id="sidebar" class="four columns">
+		    <?php print render($page['sidebar_left']); ?>
+		  </aside>
+		  <?php endif; ?>
+		  
+		  <?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ): ?>
+		  <section id="main" class="eight columns">
+		  <?php endif; ?>
 	   
-	    <?php if ( ($page['sidebar']) ): ?>
+	    <?php if ( (($page['sidebar_right']) AND (!$page['sidebar_left'])) OR ($page['sidebar_left']) AND (!$page['sidebar_right']) ): ?>
 		  <section id="main" class="twelve columns">
 		  <?php endif; ?>
-				  
+		  
 			  <?php print $messages; ?>
 			  
 	     	<?php if ($tabs = render($tabs)): ?>
@@ -105,13 +115,13 @@
 	
 			  <?php if (isset($page['content'])) { print render($page['content']); } ?>
 			  
-			<?php if ( ($page['sidebar']) ): ?>
+			<?php if ( ($page['sidebar_right']) OR ($page['sidebar_left']) ): ?>
 		  </section>
 		  <?php endif; ?>
 		  
-		  <?php if ( ($page['sidebar']) ) : ?>
+		  <?php if ( ($page['sidebar_right']) ) : ?>
 		  <aside id="sidebar" class="four columns">
-		    <?php print render($page['sidebar']); ?>
+		    <?php print render($page['sidebar_right']); ?>
 		  </aside>
 		  <?php endif; ?>
 		    
