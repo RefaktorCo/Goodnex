@@ -13,7 +13,7 @@ global $parent_root;
 		  <div class="gravatar">
 		    <?php 
 		      if (!$picture) {
-		        echo '<img src="'.$parent_root.'/img/anon.png" alt="anon">'; 
+		        echo '<img src="'.$parent_root.'/images/gravatar.jpg" alt="anon">'; 
 		      }
 		      else { 
 		        print $picture;   

@@ -16,7 +16,7 @@
 <div id="wrapper">
 <h2>Overview</h2>
 <p>Goodnex is powerful and ultra-responsive theme which can perfectly serve any type of business, freelance or interactive creative sphere. For theme support that cannot be found in this documentation, please visit our <a href="http://refaktorthemes.com/support"> support forum</a>. 
-<p>Updated: 08/27/13<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
+<p>Updated: 09/02/13<br>Author: <a href="http://refaktorthemes.com" target="_blank">Refaktor</a><br>Docs powered by: <a href="https://github.com/jgallen23/toc" target="_blank">TOC</a><br>Original design by <a href="http://themeforest.net/user/
 ThemeMakers" target="_blank">
 ThemeMakers</a></p>
 <h2>Installation</h2>
@@ -304,12 +304,98 @@ Goodnex also includes support for a "Recent Works" block that you can use to sho
 <h4>Footer Block Regions</h4>
 <p>Finally there are 6 footer block regions available, four individual four column regions and two additional six column regions below. </p>
 
+<h2>Shortcodes</h2>
+<p>For a full example of all the different shortcodes you can use refer to the Elements page in the demo content, or the examples/elements.php file in the root of the Goodnex theme folder.</p>
+<h4>Tabs</h4>
+<pre>
+&lt;div class=&quot;content-tabs&quot;&gt;
+
+	&lt;ul class=&quot;tabs-nav clearfix&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#tab1&quot;&gt;Clean&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#tab2&quot;&gt;Easy&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#tab3&quot;&gt;Support&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;&lt;!--/ .tabs-nav--&gt;
+
+	&lt;div class=&quot;tabs-container&quot;&gt;
+
+		&lt;div class=&quot;tab-content&quot; id=&quot;tab1&quot;&gt;
+			
+			&lt;h3&gt;Unique &amp; Clean Design&lt;/h3&gt;
+
+			&lt;p&gt;
+				Nulla sollicitudin tincidunt dui et egestas. Phasellus non sem elementum, ullamcorper metus vitae, accumsan dui. Duis dignissim condimentum lorem. 
+				Maecenas facilisis ipsum sed porttitor rutrum. Integer consequat semper elit sed viverra.
+			&lt;/p&gt;
+
+		&lt;/div&gt;&lt;!--/ .tab-content --&gt;
+
+		&lt;div class=&quot;tab-content&quot; id=&quot;tab2&quot;&gt;
+			
+			&lt;h3&gt;Easy to Customize&lt;/h3&gt;
+
+			&lt;p&gt;
+				Phasellus tincidunt consequat neque, in pharetra mauris ultricies nec. 
+				Curabitur dapibus, velit id lacinia scelerisque, ipsum mi mattis nunc, 
+				id vehicula sapien enim quis ante. Nulla non mauris vel neque gravida 
+				sollicitudin. 
+			&lt;/p&gt;
+
+		&lt;/div&gt;&lt;!--/ .tab-content --&gt;
+
+		&lt;div class=&quot;tab-content&quot; id=&quot;tab3&quot;&gt;
+
+			&lt;h3&gt;Free Support &amp; Updates&lt;/h3&gt;
+			
+			&lt;p&gt;
+				Nulla sollicitudin tincidunt dui et egestas. Phasellus non sem elementum, 
+				ullamcorper metus vitae, accumsan dui. Duis dignissim condimentum lorem. 
+				Maecenas facilisis ipsum sed porttitor rutrum. Integer consequat semper
+				elit sed viverra.
+			&lt;/p&gt;
+
+		&lt;/div&gt;&lt;!--/ .tab-content --&gt;
+
+	&lt;/div&gt;&lt;!-- .tabs-container --&gt;	
+
+&lt;/div&gt;&lt;!--/ .content tabs --&gt;
+</pre>
+
+<h4>Quote Box</h4>
+<pre>
+&lt;div class=&quot;quote-box&quot;&gt;
+	
+	&lt;ul class=&quot;testimonials&quot;&gt;
+
+		&lt;li&gt;
+			&lt;div class=&quot;quote-text&quot;&gt;
+				Lorem ipsum dolor sit amet, consectetur aipisc ing elit. Nulla iaculis 
+				aliquet augue, varius purus sollicitudin eget. Donec tellus sollicitudin
+				eu congue tempor dapibus et metus. Fusce ac ipsum at magna accumsan
+				scelerisque sedon dolor.
+			&lt;/div&gt;
+			&lt;div class=&quot;quote-author&quot;&gt;&lt;b&gt;Sandra Brown,&lt;/b&gt; Manager&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;div class=&quot;quote-text&quot;&gt;
+				Lorem ipsum dolor sit amet, consectetur aipisc ing elit. 
+				Nulla iaculis aliquet augue, varius purus sollicitudin eget.
+			&lt;/div&gt;
+			&lt;div class=&quot;quote-author&quot;&gt;&lt;b&gt;Sandra Brown,&lt;/b&gt; Manager&lt;/div&gt;
+		&lt;/li&gt;
+
+	&lt;/ul&gt;	
+	
+&lt;/div&gt;&lt;!--/ .quote-box--&gt;	
+</pre>
+
 <h2>Extras</h2>
 <h4>Code Examples</h4>
 <p>We've included some code examples inside the /examples folder in the root of the theme with some markup used on several of the demo page templates.</p>
 <h4>Flickr Feed</h4>
 <p>The following markup can be used to generate a Flickr Feed anywhere on your site:</p>
 <pre>
+&lt;ul class=&quot;flickr-badge clearfix&quot;&gt;&lt;/ul&gt;
+
 &lt;script&gt;
 	jQuery(document).ready(function ($) {
 		$('ul.flickr-badge').jflickrfeed({
