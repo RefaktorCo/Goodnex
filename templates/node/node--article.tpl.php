@@ -27,28 +27,60 @@ $counter = count($items);
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php if ( ($image_slide == 'true') ): ?>
-    <div class="image-post-slider">
-		  <ul>
-		    <?php while ($img_count < $counter) { ?>
-		      <li>
-					  <div class="preloader">
-							<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
-								<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="" >
-							</a>						
-						</div>
-		      </li>
-			  <?php $img_count++; } ?>		
-		  </ul>
-    </div>    
+  <?php if ($teaser): ?>
+
+	  <?php if ( ($image_slide == 'true') ): ?>
+	    <div class="image-post-slider">
+			  <ul>
+			    <?php while ($img_count < $counter) { ?>
+			      <li>
+						  <div class="preloader">
+								<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
+									<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="" >
+								</a>						
+							</div>
+			      </li>
+				  <?php $img_count++; } ?>		
+			  </ul>
+	    </div>    
+		<?php endif; ?>
+				
+		<?php if ($image_slide == 'false'): ?>
+		  <div class="preloader">
+				<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
+					<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
+				</a>						
+			</div>
+		<?php endif; ?>
+	
 	<?php endif; ?>
-			
-	<?php if ($image_slide == 'false'): ?>
-	  <div class="preloader">
-			<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
-				<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
-			</a>						
-		</div>
+	
+	<?php if (!$teaser): ?>
+
+	  <?php if ( ($image_slide == 'true') ): ?>
+	    <div class="image-post-slider">
+			  <ul>
+			    <?php while ($img_count < $counter) { ?>
+			      <li>
+						  <div class="preloader">
+								<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" rel="gallery">
+									<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="" >
+								</a>						
+							</div>
+			      </li>
+				  <?php $img_count++; } ?>		
+			  </ul>
+	    </div>    
+		<?php endif; ?>
+				
+		<?php if ($image_slide == 'false'): ?>
+		  <div class="preloader">
+				<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>">
+					<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
+				</a>						
+			</div>
+		<?php endif; ?>
+	
 	<?php endif; ?>
 	
 	<?php if (render($content['field_before_title'])) : ?>
