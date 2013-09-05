@@ -21,19 +21,26 @@ if ($items = field_get_items('node', $node, 'field_image')) {
   }
 }
 
+$img_count = 0;
 $counter = count($items);
- 
+
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-<?php print $counter; ?>
-
   <?php if ( ($image_slide == 'true') ): ?>
-	  <div class="preloader">
-			<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
-				<img src="<?php echo file_create_url($node->field_image['und'][2]['uri']); ?>" alt="" >
-			</a>						
-		</div>
+    <div class="image-post-slider">
+		  <ul>
+		    <?php while ($img_count < $counter) { ?>
+		      <li>
+					  <div class="preloader">
+							<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
+								<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="" >
+							</a>						
+						</div>
+		      </li>
+			  <?php $img_count++; } ?>		
+		  </ul>
+    </div>    
 	<?php endif; ?>
 			
 	<?php if ($image_slide == 'false'): ?>
