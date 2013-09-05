@@ -20,17 +20,19 @@ if ($items = field_get_items('node', $node, 'field_image')) {
     $image_slide = 'true';
   }
 }
+
+$counter = count($items);
  
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
+<?php print $counter; ?>
+
   <?php if ( ($image_slide == 'true') ): ?>
-	  <div class="image-post-slider">
-		  <ul>
-			  <?php if (render($content['field_image'])) : ?>
-			    <?php print render($content['field_image']); ?>
-			  <?php endif; ?>
-		  </ul>  
+	  <div class="preloader">
+			<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
+				<img src="<?php echo file_create_url($node->field_image['und'][2]['uri']); ?>" alt="" >
+			</a>						
 		</div>
 	<?php endif; ?>
 			
