@@ -1,3 +1,46 @@
+li ul, li ol {
+  margin:0;
+}
+
+ul, ol {
+  margin-left: 30px;
+}
+
+ul {
+  list-style-type:disc;
+}
+
+ol {
+  list-style-type:decimal;
+}
+
+.tabs-nav, 
+.testimonials, 
+.unstyled-list, 
+.social-icons, 
+nav ul, ul.clients-items, 
+.image-gallery-slider ul,
+.ajax-nav,
+.widget ul,
+.flickr-badge,
+.item-list ul,
+.features,
+.slides {
+	margin: 0;
+}
+
+.tabs-nav li, 
+.testimonials li, 
+.unstyled-list li, 
+.social-icons li,
+.ajax-nav li,
+.widget ul li,
+.flickr-badge li,
+.item-list ul li,
+.features li {
+	list-style: none;
+}
+
 #google_map {
 	margin-bottom: 20px;
 }
@@ -100,7 +143,8 @@ header h1 {
   padding-left: 15px;
 }
 
-.item-list ul li, .item-list ul { margin: 0; }
+.item-list ul li, 
+.item-list ul { margin: 0; }
 
 #drupal_tabs {
 	margin-bottom: 20px;
@@ -134,11 +178,11 @@ header h1 {
 }
 
 .embed-container {
-position: relative;
-padding-bottom: 56.25%;
-padding-top: 30px;
-height: 0;
-overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
 }
 
 .entry-meta span {
@@ -211,7 +255,6 @@ input#edit-subject.form-text:before {
   font-weight: 600;
 }
 
-/* Popular tags view*/
 #block-views-popular-tags-block {
 	margin-bottom: 45px !important;
 }

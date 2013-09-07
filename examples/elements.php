@@ -199,7 +199,7 @@
 
 	<h6 class="section-title">List Styles</h6>
 
-	<ul class="list">
+	<ul class="list unstyled-list">
 		<li><i class="icon-ok"></i>Lorem ipsum dolor amet, consectetur </li>
 		<li><i class="icon-ok-circle"></i>Maecenas ac metus augue tincidunt </li>
 		<li><i class="icon-ok-sign"></i>Duis vitae est mi, et cursus nunc. </li>

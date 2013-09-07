@@ -2,7 +2,7 @@
 
 <div class="four columns">
 	
-	<ul>
+	<ul class="unstyled-list">
 		<li>
 			<i class="icons-app"></i>
 			<a href="#">Application</a>	
@@ -57,7 +57,7 @@
 
 <div class="four columns">
 	
-	<ul>
+	<ul class="unstyled-list">
 		<li>
 			<i class="icons-polaroid"></i>
 			<a href="#">Polaroid</a>	
@@ -112,7 +112,7 @@
 
 <div class="four columns">
 	
-	<ul>
+	<ul class="unstyled-list">
 		<li>
 			<i class="icons-life-ring"></i>
 			<a href="#">Life Ring</a>	
@@ -167,7 +167,7 @@
 
 <div class="four columns">
 	
-	<ul>
+	<ul class="unstyled-list">
 		<li>
 			<i class="icons-heart"></i>
 			<a href="#">Heart</a>	
@@ -227,7 +227,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-cloud-download"></i> icon-cloud-download</li>
 		<li><i class="icon-cloud-upload"></i> icon-cloud-upload</li>
 		<li><i class="icon-lightbulb"></i> icon-lightbulb</li>
@@ -244,7 +244,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-user-md"></i> icon-user-md</li>
 		<li><i class="icon-stethoscope"></i> icon-stethoscope</li>
 		<li><i class="icon-suitcase"></i> icon-suitcase</li>
@@ -261,7 +261,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-angle-left"></i> icon-angle-left</li>
 		<li><i class="icon-angle-right"></i> icon-angle-right</li>
 		<li><i class="icon-angle-up"></i> icon-angle-up</li>
@@ -278,7 +278,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-desktop"></i> icon-desktop</li>
 		<li><i class="icon-laptop"></i> icon-laptop</li>
 		<li><i class="icon-tablet"></i> icon-tablet</li>
@@ -299,7 +299,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-adjust"></i> icon-adjust</li>
 		<li><i class="icon-asterisk"></i> icon-asterisk</li>
 		<li><i class="icon-ban-circle"></i> icon-ban-circle</li>
@@ -344,7 +344,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-edit"></i> icon-edit</li>
 		<li><i class="icon-envelope"></i> icon-envelope</li>
 		<li><i class="icon-envelope-alt"></i> icon-envelope-alt</li>
@@ -389,7 +389,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-magic"></i> icon-magic</li>
 		<li><i class="icon-magnet"></i> icon-magnet</li>
 		<li><i class="icon-map-marker"></i> icon-map-marker</li>
@@ -434,7 +434,7 @@
 
 <div class="four columns">
 	
-	 <ul class="the-icons">
+	 <ul class="the-icons unstyled-list">
 		<li><i class="icon-share"></i> icon-share</li>
 		<li><i class="icon-share-alt"></i> icon-share-alt</li>
 		<li><i class="icon-shopping-cart"></i> icon-shopping-cart</li>
@@ -483,7 +483,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-file"></i> icon-file</li>
 		<li><i class="icon-file-alt"></i> icon-file-alt</li>
 		<li><i class="icon-cut"></i> icon-cut</li>
@@ -498,7 +498,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-text-height"></i> icon-text-height</li>
 		<li><i class="icon-text-width"></i> icon-text-width</li>
 		<li><i class="icon-align-left"></i> icon-align-left</li>
@@ -513,7 +513,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-font"></i> icon-font</li>
 		<li><i class="icon-bold"></i> icon-bold</li>
 		<li><i class="icon-italic"></i> icon-italic</li>
@@ -528,7 +528,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-table"></i> icon-table</li>
 		<li><i class="icon-th-large"></i> icon-th-large</li>
 		<li><i class="icon-th"></i> icon-th</li>
@@ -548,7 +548,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-angle-left"></i> icon-angle-left</li>
 		<li><i class="icon-angle-right"></i> icon-angle-right</li>
 		<li><i class="icon-angle-up"></i> icon-angle-up</li>
@@ -563,7 +563,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-caret-down"></i> icon-caret-down</li>
 		<li><i class="icon-caret-left"></i> icon-caret-left</li>
 		<li><i class="icon-caret-right"></i> icon-caret-right</li>
@@ -578,7 +578,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</li>
 		<li><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</li>
 		<li><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</li>
@@ -593,7 +593,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-hand-down"></i> icon-hand-down</li>
 		<li><i class="icon-hand-left"></i> icon-hand-left</li>
 		<li><i class="icon-hand-right"></i> icon-hand-right</li>
@@ -611,7 +611,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-play-circle"></i> icon-play-circle</li>
 		<li><i class="icon-play"></i> icon-play</li>
 		<li><i class="icon-pause"></i> icon-pause</li>
@@ -622,7 +622,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-step-backward"></i> icon-step-backward</li>
 		<li><i class="icon-fast-backward"></i> icon-fast-backward</li>
 		<li><i class="icon-backward"></i> icon-backward</li>
@@ -633,7 +633,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-fast-forward"></i> icon-fast-forward</li>
 		<li><i class="icon-step-forward"></i> icon-step-forward</li>
 		<li><i class="icon-eject"></i> icon-eject</li>
@@ -643,7 +643,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-fullscreen"></i> icon-fullscreen</li>
 		<li><i class="icon-resize-full"></i> icon-resize-full</li>
 		<li><i class="icon-resize-small"></i> icon-resize-small</li>
@@ -658,7 +658,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-phone"></i> icon-phone</li>
 		<li><i class="icon-phone-sign"></i> icon-phone-sign</li>
 		<li><i class="icon-facebook"></i> icon-facebook</li>
@@ -669,7 +669,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-twitter"></i> icon-twitter</li>
 		<li><i class="icon-twitter-sign"></i> icon-twitter-sign</li>
 		<li><i class="icon-github"></i> icon-github</li>
@@ -680,7 +680,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-github-sign"></i> icon-github-sign</li>
 		<li><i class="icon-linkedin"></i> icon-linkedin</li>
 		<li><i class="icon-linkedin-sign"></i> icon-linkedin-sign</li>
@@ -691,7 +691,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-pinterest-sign"></i> icon-pinterest-sign</li>
 		<li><i class="icon-google-plus"></i> icon-google-plus</li>
 		<li><i class="icon-google-plus-sign"></i> icon-google-plus-sign</li>
@@ -707,7 +707,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-ambulance"></i> icon-ambulance</li>
 		<li><i class="icon-beaker"></i> icon-beaker</li>
 	</ul>
@@ -716,7 +716,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-h-sign"></i> icon-h-sign</li>
 		<li><i class="icon-hospital"></i> icon-hospital</li>
 	</ul>
@@ -725,7 +725,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-medkit"></i> icon-medkit</li>
 		<li><i class="icon-plus-sign-alt"></i> icon-plus-sign-alt</li>
 	</ul>
@@ -734,7 +734,7 @@
 
 <div class="four columns">
 	
-	<ul class="the-icons">
+	<ul class="the-icons unstyled-list">
 		<li><i class="icon-stethoscope"></i> icon-stethoscope</li>
 		<li><i class="icon-user-md"></i> icon-user-md</li>
 	</ul>
