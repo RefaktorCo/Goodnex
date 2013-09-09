@@ -3,3 +3,5 @@
   
 1.0.1 (09/09/13)
   *Fixed ul/li default styles.
+  *Fixed misconfigured blocks in demo content.
+  *Updated documentation.
