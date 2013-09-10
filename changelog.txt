@@ -1,7 +1,10 @@
-1.0 (09/05/13)
-  *Initial release.
-  
+1.0.2 (09/10/13)
+  *Removed restriction on sticky header for logged in users.
+
 1.0.1 (09/09/13)
   *Fixed ul/li default styles.
   *Fixed misconfigured blocks in demo content.
   *Updated documentation.
+
+1.0 (09/05/13)
+  *Initial release.
