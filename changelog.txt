@@ -2,8 +2,10 @@
   *Removed restriction on sticky header for logged in users.
   *Fixed a bug causing the Drupal contact form to not function properly. 
   *Fixed search box permissions in demo install. 
+  *Removed margin from image post slider.
   *Fixed bug where comment date was displaying the node date.
   *Added support for detail box hover color.
+  *Updated documentation.
 
 1.0.1 (09/09/13)
   *Fixed ul/li default styles.
