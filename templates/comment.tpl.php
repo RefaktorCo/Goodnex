@@ -23,7 +23,7 @@ global $parent_root;
 		  <div class="comment-body"> 
         <div class="comment-meta">
           <div class="comment-author"><?php print $author; ?></div>
-	        <div class="comment-date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></div>
+	        <div class="comment-date"><?php print format_date($comment->created, 'custom', 'M d, Y'); ?></div>
 	        <span class="pull-right">
 	          <?php if (!empty($content['links'])) { print render($content['links']); } ?>
 	        </span>

@@ -1,6 +1,9 @@
-1.0.2 (09/14/13)
+1.0.2 (09/18/13)
   *Removed restriction on sticky header for logged in users.
   *Fixed a bug causing the Drupal contact form to not function properly. 
+  *Fixed search box permissions in demo install. 
+  *Fixed bug where comment date was displaying the node date.
+  *Added support for detail box hover color.
 
 1.0.1 (09/09/13)
   *Fixed ul/li default styles.
