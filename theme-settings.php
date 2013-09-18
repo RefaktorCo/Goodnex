@@ -27,6 +27,13 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value' => theme_get_setting('sticky_header'),
     );
     
+    // Black and White
+    $form['options']['general']['black_and_white'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Black/White Image Effect'),
+      '#default_value' => theme_get_setting('black_and_white'),
+    );
+    
   // Color
   $form['options']['color'] = array(
     '#type' => 'fieldset',

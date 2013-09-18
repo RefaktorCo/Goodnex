@@ -120,18 +120,6 @@
 	/*	Black And White										*/
 	/* ---------------------------------------------------- */
 
-	var objBlackAndWhite  = {
-		hoverEffect: true, // default true
-		// set the path to BnWWorker.js for a superfast implementation
-		webworkerPath: '',
-		// for the images with a fluid width and height 
-		responsive: true,
-		invertHoverEffect: false,
-		speed: {//this property could also be just speed: value for both fadeIn and fadeOut
-			fadeIn: 400, // 400ms for fadeIn animations
-			fadeOut: 800 // 800ms for fadeOut animations
-		}
-	};
 
 	/* ---------------------------------------------------- */
 	/*	Black And White for Touch Devices					*/

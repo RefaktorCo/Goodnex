@@ -28,7 +28,7 @@ not-ie" lang="<?php print $language->language; ?>" dir="<?php print $language->d
 
 <?php if ( (theme_get_setting('sticky_header') == '1') ): ?>
 	<script type='text/javascript' src='<?php global $parent_root; echo $parent_root; ?>/js/sticky.js'></script>
-	<?php endif; ?>
+<?php endif; ?>
 
 </head>
 

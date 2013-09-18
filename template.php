@@ -384,10 +384,59 @@ ul.type-1 li:before, .quotes-nav a:hover, #back-top:hover, .dropcap.color, i.sma
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important; background-image: none !important;}</style> ",
-    '#weight' => 8,
   );
   
+  if ( theme_get_setting('black_and_white') == '1' ) {
+  
+	  $black_and_white = array(
+	    '#type' => 'markup',
+	    '#markup' => "
+	      <script type='text/javascript'>
+	      var objBlackAndWhite  = {
+					hoverEffect: true, // default true
+					// set the path to BnWWorker.js for a superfast implementation
+					webworkerPath: '',
+					// for the images with a fluid width and height 
+					responsive: true,
+					invertHoverEffect: false,
+					speed: {//this property could also be just speed: value for both fadeIn and fadeOut
+						fadeIn: 400, // 400ms for fadeIn animations
+						fadeOut: 800 // 800ms for fadeOut animations
+					}
+		    };
+		  </script>  
+	    ",
+	  );
+  
+  }
+  
+  else {
+	  
+	  $black_and_white = array(
+    '#type' => 'markup',
+    '#markup' => "
+      <script type='text/javascript'>
+      var objBlackAndWhite  = {
+				hoverEffect: false, // default true
+				// set the path to BnWWorker.js for a superfast implementation
+				webworkerPath: '',
+				// for the images with a fluid width and height 
+				responsive: true,
+				invertHoverEffect: true,
+				speed: {//this property could also be just speed: value for both fadeIn and fadeOut
+					fadeIn: 400, // 400ms for fadeIn animations
+					fadeOut: 800 // 800ms for fadeOut animations
+				}
+	    };
+	  </script>  
+    ",
+  );
+	  
+  }
+  
   drupal_add_html_head( $viewport, 'viewport');
+  
+  drupal_add_html_head( $black_and_white, 'black_and_white');
   
   if (theme_get_setting('color_scheme') == "custom") {
     drupal_add_html_head( $custom_color, 'custom_color' );
