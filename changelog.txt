@@ -7,6 +7,7 @@
   *Fixed bug where comment date was displaying the node date.
   *Added support for detail box hover color.
   *Updated documentation.
+  *Added theme PSD files to download content.
 
 1.0.1 (09/09/13)
   *Fixed ul/li default styles.
