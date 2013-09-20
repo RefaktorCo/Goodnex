@@ -1,6 +1,10 @@
 1.0.3 (09/23/13)
   *Fixed appearance of portfolio node pagination when logged in.
   *Updated appearance of Drupal tabs.
+  *Updated style of portfolio image slider.
+  *Applied theme styling to all submit buttons.
+  *Improvements to search results page.
+  *Fixed bug with Portfolio filter terms with more than one word.
 
 1.0.2 (09/18/13)
   *Added theme setting to toggle black and white image effect.

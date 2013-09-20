@@ -529,7 +529,6 @@ body.boxed { background-attachment: fixed; }
 	}
 
 	label { 
-		display: inline-block; 
 		cursor: pointer;
 	}
 	
@@ -564,7 +563,6 @@ body.boxed { background-attachment: fixed; }
 		font-size: 12px;
 		font-family: Arial, sans-serif;
 		padding: 6px 8px 7px;
-		width: 100%;
 		border-width: 1px;
 		border-style: solid;
 		border-color: transparent;

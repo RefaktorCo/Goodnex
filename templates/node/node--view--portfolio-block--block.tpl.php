@@ -1,3 +1,10 @@
+<?php
+$search = array(' ', '-');
+$replace = array(' / ', ' ');
+$cat = str_replace($search, $replace, strip_tags(render($content['field_portfolio_category'])));
+$replacement = " ";
+?>
+
 <article class="<?php echo theme_get_setting('portfolio_columns');?>" data-categories="<?php print strip_tags(render($content['field_portfolio_category'])); ?>">
 
 	<div class="preloader">
@@ -9,7 +16,7 @@
 	<a class="project-meta" href="<?php echo $node_url; ?>">
 
 		<h6 class="title"><?php print $title ;?></h6>
-		<span class="categories"><?php print str_replace(' ', ' / ', strip_tags(render($content['field_portfolio_category']))); ?></span>
+		<span class="categories"><?php print substr($cat, 0, -2).$replacement; ?></span>
 
 	</a><!--/ .project-meta-->						
 

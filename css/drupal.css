@@ -42,8 +42,40 @@ nav ul, ul.clients-items,
 	list-style: none;
 }
 
+#contact-site-form label, #comment-form-wrapper label {
+	display: inline-block;
+}
+
+select.filter-list {
+	width: 100%;
+}
+
+.page-search #block-system-main .content {
+	margin-left: 10px;
+}
+
 .profile .user-picture {
 margin: 2em 0em 1em 0;
+}
+
+#search-form .container-inline label {
+	display: block;
+}
+
+.search-advanced {
+	margin: 20px 0px;
+}
+
+.search-results {
+	margin-left: 0px;
+}
+
+.search-results .search-snippet-info {
+  padding-left: 0;
+}
+
+.search-result {
+	border-bottom: 1px solid #ccc;
 }
 
 #google_map {
@@ -140,7 +172,7 @@ header h1 {
 }
 
 #comment-body-add-more-wrapper .form-type-textarea label, .contact-form .form-item-message label {
-	display: none;
+	display: none !important;
 }
 
 .contact-form input {
