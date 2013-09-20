@@ -6,15 +6,10 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
 
-/* Update Drupal's version of jQuery */
-function goodnex_js_alter(&$js) {
-  if (isset($js['misc/jquery.js'])) {
-       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
-       $js['misc/jquery.js']['version'] = '1.8.2';
-    $js['misc/jquery.js']['data'] = $jsPath;
-  }
-}
 
+/**
+ * Strip unwanted rel attributes from meta tags in <head>.
+ */ 
 function goodnex_html_head_alter(&$head_elements) {
 	unset($head_elements['system_meta_generator']);
 	foreach ($head_elements as $key => $element) {
@@ -25,6 +20,29 @@ function goodnex_html_head_alter(&$head_elements) {
 		  unset($head_elements[$key]);
 		}
   }
+}
+
+
+/**
+ * Apply alternate UL class to Drupal tabs.
+ */ 
+function goodnex_menu_local_tasks(&$variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="tabs-nav clearfix">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="tabs-nav clearfix">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
+  return $output;
 }
 
 /**

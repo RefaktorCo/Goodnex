@@ -1,3 +1,7 @@
+1.0.3 (09/23/13)
+  *Fixed appearance of portfolio node pagination when logged in.
+  *Updated appearance of Drupal tabs.
+
 1.0.2 (09/18/13)
   *Added theme setting to toggle black and white image effect.
   *Removed restriction on sticky header for logged in users.

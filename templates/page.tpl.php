@@ -58,12 +58,7 @@
 					</nav>
 					
 					<div class="search-wrapper">
-
-						<?php
-          $block = module_invoke('search', 'block_view', 'search');
-          print render($block); 
-?>
-
+					  <?php $block = module_invoke('search', 'block_view', 'search'); print render($block); ?>
 					</div><!--/ .search-wrapper--> 
 					
 				</div>
@@ -102,7 +97,7 @@
 			  <?php print $messages; ?>
 			  
 	     	<?php if ($tabs = render($tabs)): ?>
-				  <div id="drupal_tabs" class="tabs ">
+				  <div id="drupal_tabs" class="tabs">
 				    <?php print render($tabs); ?>
 				  </div>
 			  <?php endif; ?>
