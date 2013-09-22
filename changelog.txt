@@ -1,4 +1,4 @@
-1.0.3 (09/23/13)
+1.0.3 (09/20/13)
   *Fixed appearance of portfolio node pagination when logged in.
   *Updated appearance of Drupal tabs.
   *Updated style of portfolio image slider.
