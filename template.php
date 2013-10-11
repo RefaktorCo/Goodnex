@@ -25,7 +25,6 @@ function goodnex_html_head_alter(&$head_elements) {
 /**
  * Overwrite theme_button()
  * @file template.php
- * !replace my_theme with the name of your active theme
  */
 function goodnex_button($variables) {
 
