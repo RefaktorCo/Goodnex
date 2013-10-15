@@ -1,3 +1,6 @@
+1.0.4 (10/15/13)
+  *Renamed "menu" region "header_menu" for block/region template specificity.
+
 1.0.3 (09/20/13)
   *Fixed appearance of portfolio node pagination when logged in.
   *Updated appearance of Drupal tabs.

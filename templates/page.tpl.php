@@ -53,7 +53,7 @@
 				<div class="menu-container clearfix">
 					<nav id="navigation" class="navigation">
 					  <div class="menu">
-					    <?php print render($page['menu']); ?>
+					    <?php print render($page['header_menu']); ?>
 					  </div>  
 					</nav>
 					
