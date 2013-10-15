@@ -42,6 +42,8 @@ nav ul, ul.clients-items,
 	list-style: none;
 }
 
+.responsive-nav { width: 100%; }
+
 #contact-site-form label, #comment-form-wrapper label {
 	display: inline-block;
 }
