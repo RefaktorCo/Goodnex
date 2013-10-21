@@ -1,6 +1,8 @@
-1.0.4 (10/15/13)
+1.0.4 (10/21/13)
   *Renamed "menu" region "header_menu" for block/region template specificity.
   *Fixed apperance of mobile menu.
+  *Updated MegaSlider module to version 2.4.
+  *Fixed error with recent posts view block when thumbnail image is not uploaded.
 
 1.0.3 (09/20/13)
   *Fixed appearance of portfolio node pagination when logged in.
