@@ -69,16 +69,16 @@
 	<?php print render($page['before_content_no_wrap']); ?>
   <section id="content">
 	  <div class="container">
-	     
-	    <?php if ($title) : ?> 
+	    
+	    <?php if ($title) : ?>
+			
 	    <div class="page-header clearfix">
-
-				<h1 class="alignleft"><?php print $title; ?></h1>
-				
-				<?php if ($breadcrumb): ?>
-				<div id="breadcrumbs"><?php print $breadcrumb; ?> </div>	
+            
+		    <?php if ( ($breadcrumb) AND (theme_get_setting('breadcrumbs') == '1') ): ?>
+				  <div id="breadcrumbs"><?php print $breadcrumb; ?> </div>	
 				<?php endif; ?>
-
+				    
+				<h1 class="alignleft"><?php print $title; ?></h1>
 			</div><!--/ .page-header-->
 			<?php endif; ?>
 	    

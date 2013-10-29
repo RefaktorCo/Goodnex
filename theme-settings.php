@@ -34,6 +34,13 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value' => theme_get_setting('black_and_white'),
     );
     
+    // Breadcrumb
+    $form['options']['general']['breadcrumbs'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Breadcrumbs'),
+      '#default_value' => theme_get_setting('breadcrumbs'),
+    );
+    
   // Color
   $form['options']['color'] = array(
     '#type' => 'fieldset',

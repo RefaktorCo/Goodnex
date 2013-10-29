@@ -53,6 +53,7 @@ regions[footer_bottom] = Footer Bottom
 ; Define theme setting defaults.
 settings[sticky_header] = 1
 settings[black_and_white] = 1
+settings[breadcrumbs] = 0
 settings[color_scheme] = color-1
 settings[skin_style] = normal
 settings[site_layout] = wide

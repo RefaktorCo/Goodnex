@@ -3570,7 +3570,8 @@ body.boxed { background-attachment: fixed; }
 .color-1 .author-entry h5,
 .color-1 #footer a:hover,
 .color-1 .quote-author,
-.color-1 .tooltip
+.color-1 .tooltip,
+.color-1 #breadcrumbs a:hover
 {
 	color: #79be0b;
 }
