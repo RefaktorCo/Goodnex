@@ -3,6 +3,7 @@
   *Fixed missing Drupal links in node--article.tpl.
   *Added breadcrumbs option.
   *"Search" region changed to "Header Search", now properly utilized.
+  *Modified contact form mail label to fix issue on mobile devices.
 
 1.0.4 (10/21/13)
   *Renamed "menu" region "header_menu" for block/region template specificity.

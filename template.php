@@ -106,6 +106,22 @@ function goodnex_form_alter(&$form, &$form_state, $form_id) {
   }
 } 
 
+/**
+* Implements hook_form_contact_site_form_alter().
+*/
+function goodnex_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  
+	$form['mail'] = array(
+	  '#type' => 'textfield',
+	  '#title' => t('Email'),
+	  '#maxlength' => 255,
+	  '#default_value' => $user->uid ? $user->mail : '',
+	  '#required' => TRUE,
+	);
+
+}
+
 function goodnex_pagination($node, $mode = 'n') {
   if (!function_exists('prev_next_nid')) {
     return NULL;
@@ -202,6 +218,7 @@ function goodnex_menu_link(array $variables) {
 function goodnex_menu_tree(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
 }
+
 
 
 /**
