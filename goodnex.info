@@ -32,7 +32,7 @@ scripts[] = js/goodnex.js
 regions[header_left] = Header Left
 regions[header_right] = Header Right
 regions[header_menu] = Header Menu
-regions[search] = Search
+regions[header_search] = Header Search
 
 regions[before_content_no_wrap] = Before Content No Wrap
 regions[before_content] = Before Content

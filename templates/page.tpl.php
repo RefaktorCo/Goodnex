@@ -57,9 +57,11 @@
 					  </div>  
 					</nav>
 					
-					<div class="search-wrapper">
-					  <?php $block = module_invoke('search', 'block_view', 'search'); print render($block); ?>
-					</div><!--/ .search-wrapper--> 
+					<?php if ( ($page['header_search']) ): ?>
+						<div class="search-wrapper">
+						  <?php print render($page['header_search']); ?>
+						</div><!--/ .search-wrapper--> 
+					<?php endif; ?>
 					
 				</div>
      </div>
