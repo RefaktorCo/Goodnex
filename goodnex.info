@@ -2,7 +2,7 @@ name = Goodnex
 description = Responsive Drupal 7 Theme. 
 core = 7.x
 engine = phptemplate
-version = 1.0.4
+version = 1.0.5
 
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/drupal.css

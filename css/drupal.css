@@ -44,6 +44,12 @@ nav ul, ul.clients-items,
 
 .responsive-nav { width: 100%; }
 
+#breadcrumbs {
+	float: right;
+	padding: 10px 0px 0px 0px;
+	font-size: 16px;
+}
+
 #contact-site-form label, #comment-form-wrapper label {
 	display: inline-block;
 }

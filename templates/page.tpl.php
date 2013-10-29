@@ -74,6 +74,10 @@
 	    <div class="page-header clearfix">
 
 				<h1 class="alignleft"><?php print $title; ?></h1>
+				
+				<?php if ($breadcrumb): ?>
+				<div id="breadcrumbs"><?php print $breadcrumb; ?> </div>	
+				<?php endif; ?>
 
 			</div><!--/ .page-header-->
 			<?php endif; ?>
