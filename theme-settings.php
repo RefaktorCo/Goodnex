@@ -187,6 +187,47 @@ function goodnex_form_system_theme_settings_alter(&$form, &$form_state) {
           'four columns' => 'Four (default)',
         ),
       ); 
+      
+  // Post Meta
+  $form['options']['meta'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Post Meta'),
+  );
+                
+    // Meta Title
+    $form['options']['meta']['meta_title'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Meta Title'),
+      '#default_value' => theme_get_setting('meta_title'),
+    );
+    
+    // Meta Date
+    $form['options']['meta']['meta_date'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Meta Date'),
+      '#default_value' => theme_get_setting('meta_date'),
+    );
+    
+    // Meta Author
+    $form['options']['meta']['meta_author'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Meta Author'),
+      '#default_value' => theme_get_setting('meta_author'),
+    );   
+    
+    // Meta Date
+    $form['options']['meta']['meta_tags'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Meta Tags'),
+      '#default_value' => theme_get_setting('meta_tags'),
+    );
+    
+    // Meta Comments
+    $form['options']['meta']['meta_comments'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Meta Comments'),
+      '#default_value' => theme_get_setting('meta_comments'),
+    );
     
   // CSS
   $form['options']['css'] = array(

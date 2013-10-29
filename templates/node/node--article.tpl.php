@@ -91,19 +91,21 @@ $counter = count($items);
 		
   <div class="entry">
   <?php print render($title_prefix); ?>
-  
+    
+  <?php if ( theme_get_setting('meta_title') == '1' ) : ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+  <?php endif; ?>  
  
   <?php print render($title_suffix); ?>
 
   <?php if ($display_submitted): ?>
     <div class="entry-meta">
-			<span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span>
-			<span class="author"><?php echo t('By'); ?> <?php print $name; ?></span>
-			<?php if (render($content['field_tags'])): ?>  
+			<?php if ( theme_get_setting('meta_date') == '1' ) : ?><span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span><?php endif; ?>
+			<?php if ( theme_get_setting('meta_author') == '1' ) : ?><span class="author"><?php echo t('By'); ?> <?php print $name; ?></span><?php endif; ?>
+			<?php if ( (render($content['field_tags'])) AND (theme_get_setting('meta_tags')) == '1' ): ?>  
 			  <span class="tag"><?php print render($content['field_tags']); ?></span>
 			<?php endif; ?>  
-			<span class="comments"><a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+			<?php if ( theme_get_setting('meta_comments') == '1' ) : ?><span class="comments"><a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span><?php endif; ?>
 		</div><!--/ .entry-meta-->
   <?php endif; ?>
 
