@@ -44,6 +44,11 @@ nav ul, ul.clients-items,
 
 .responsive-nav { width: 100%; }
 
+.link-wrapper {
+	float: right;
+	padding: 20px 0px;
+}
+
 #breadcrumbs {
 	float: right;
 	padding: 10px 0px 0px 0px;
