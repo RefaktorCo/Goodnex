@@ -44,6 +44,10 @@ ul.clients-items li,
 	list-style: none;
 }
 
+.content p a {
+  color: #b2b2b2;
+}
+
 .responsive-nav { width: 100%; }
 
 .link-wrapper {

@@ -487,20 +487,26 @@ function goodnex_preprocess_html(&$vars){
   
   $custom_background_color = array(
     '#type' => 'markup',
-    '#markup' => "<style type='text/css'>.navigation > div > ul > li:hover > a, .navigation > div > ul > li.current-menu-item > a, .navigation > div > ul > li.current-menu-parent > a, .navigation > div > ul > li.current-menu-ancestor > a, .navigation > div > ul > li.current_page_item > a, .navigation > div > ul > li.current_page_parent > a, .navigation > div > ul > li.current_page_ancestor > a, .scribble .projects-carousel li:hover > a:after, .simple-pricing-table.type-2 .featured .price, .scribble article:hover .project-meta:after, .simple-pricing-table .featured .button, .jta-tweet-list-controls span:hover, .simple-pricing-table.type-1 .title, .gallery-slider-nav:hover a:hover, .color-1.scribble .team-entry:hover:after, .scribble .tabs-nav .active:after, .post-slider-nav:hover a:hover, .flex-direction-nav a:hover, .portfolio-controls a:hover, .acc-trigger.active:before, .detail-box .transform, .ajax-nav li:hover > a, .jcarousel-prev:hover, .jcarousel-next:hover, .wp-pagenavi .current, .button.default:hover, .flexslider .caption, .ajax-nav .current a, ul.type-1 li:before, .quotes-nav a:hover, #back-top:hover, .dropcap.color, i.small-arrows, .curtain	{background-color: #".theme_get_setting('custom_color')." }</style> ",
+    '#markup' => "<style type='text/css'>.navigation > div > ul > li:hover > a, .navigation > div > ul > li.current-menu-item > a, .navigation > div > ul > li.current-menu-parent > a, .navigation > div > ul > li.current-menu-ancestor > a, .navigation > div > ul > li.current_page_item > a, .navigation > div > ul > li.current_page_parent > a, .navigation > div > ul > li.current_page_ancestor > a, .scribble .projects-carousel li:hover > a:after, .simple-pricing-table.type-2 .featured .price, .scribble article:hover .project-meta:after, .simple-pricing-table .featured .button, .jta-tweet-list-controls span:hover, .simple-pricing-table.type-1 .title, .gallery-slider-nav:hover a:hover, .color-1.scribble .team-entry:hover:after, .scribble .tabs-nav .active:after, .post-slider-nav:hover a:hover, .flex-direction-nav a:hover, .portfolio-controls a:hover, .acc-trigger.active:before, .detail-box .transform, .ajax-nav li:hover > a, .jcarousel-prev:hover, .jcarousel-next:hover, .wp-pagenavi .current, .button.default:hover, .flexslider .caption, .ajax-nav .current a, ul.type-1 li:before, .quotes-nav a:hover, #back-top:hover, .dropcap.color, i.small-arrows, .curtain, .highlight	{background-color: #".theme_get_setting('custom_color')." }</style> ",
     '#weight' => 3,
+  );
+  
+  $custom_border_color = array(
+    '#type' => 'markup',
+    '#markup' => "<style type='text/css'>.portfolio-items article:hover .project-meta, .projects-carousel li:hover > a, .ajax-nav li:hover:before, .ajax-nav .current:before, .tabs-nav .active, .team-entry:hover{border-color: #".theme_get_setting('custom_color')." }</style> ",
+    '#weight' => 4,
   );
   
   $moz_highlight = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>::-moz-selection {background-color: #".theme_get_setting('custom_color')." }</style> ",
-    '#weight' => 4,
+    '#weight' => 5,
   );
   
   $other_highlight = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>::selection {background-color: #".theme_get_setting('custom_color')." }</style> ",
-    '#weight' => 5,
+    '#weight' => 6,
   );
   
   $background_color = array(
@@ -562,6 +568,7 @@ function goodnex_preprocess_html(&$vars){
   
   if (theme_get_setting('color_scheme') == "custom") {
     drupal_add_html_head( $custom_color, 'custom_color' );
+    drupal_add_html_head( $custom_border_color, 'custom_border_color' );
     drupal_add_html_head( $moz_highlight , 'moz_highlight ' );
     drupal_add_html_head( $other_highlight , 'other_highlight ' );
     drupal_add_html_head( $custom_background_color, 'custom_background_color' );
