@@ -33,11 +33,13 @@ nav ul, ul.clients-items,
 .tabs-nav li, 
 .testimonials li, 
 .unstyled-list li, 
+ul.clients-items li,
 .social-icons li,
 .ajax-nav li,
 .widget ul li,
 .flickr-badge li,
 .item-list ul li,
+.ajax-content ul, 
 .features li {
 	list-style: none;
 }

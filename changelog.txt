@@ -1,3 +1,6 @@
+1.0.6 (11/06/13)
+  *Fixed additional issue with custom color in FireFox browser.
+
 1.0.5 (10/30/13)
   *Fixed some issues related to the custom color option.
   *Fixed missing Drupal links in node--article.tpl.
