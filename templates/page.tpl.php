@@ -125,12 +125,17 @@
 		    <?php print render($page['sidebar_right']); ?>
 		  </aside>
 		  <?php endif; ?>
-		  
-		  <?php print render($page['after_content']); ?>
 		    
     </div>
+    
+    <div id="after-content" class="container">
+      <div class="sixteen columns">
+        <?php print render($page['after_content']); ?>
+      </div>
+    </div>
+    
   </section> 
- 
+
   <?php print render($page['after_content_no_wrap']); ?>
 
   <footer id="footer">

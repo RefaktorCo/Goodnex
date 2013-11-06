@@ -48,6 +48,10 @@ ul.clients-items li,
   color: #b2b2b2;
 }
 
+.content p a:hover {
+  color: #8e8e8e;
+}
+
 .responsive-nav { width: 100%; }
 
 .link-wrapper {
@@ -345,7 +349,7 @@ input#edit-subject.form-text:before {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;	
-	background-color: #676767;
+	background-color: #676767 !important;
   color: #d4d4d4 !important;
   display: inline-block;
   margin-right: 3px;
@@ -357,4 +361,8 @@ input#edit-subject.form-text:before {
 .view-popular-tags a:hover {
   background-color: #c2c2c2 !important;
 	color: #383838 !important;
+}
+
+#after-content {
+	margin-top: 40px;
 }
