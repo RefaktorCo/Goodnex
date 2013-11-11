@@ -124,7 +124,7 @@ $counter = count($items);
 	  	<a class="button default small" href="<?php print $node_url;?>">read more</a>
 	<?php endif;?>
 	
-	<?php if(!$teaser): ?>
+	<?php if(!$teaser && module_exists('profile2')): ?>
 	<div class="author-about">
 
 		<div class="author-thumb">

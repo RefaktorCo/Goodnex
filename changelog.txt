@@ -1,6 +1,7 @@
-1.0.6 (11/06/13)
-  *Fixed additional issue with custom color in FireFox browser.
+1.0.6 (11/11/13)
+  *Fixed additional issues with custom color in FireFox browser.
   *Fixed issue with "After Content" region not displaying properly on certain pages.
+  *"About the author" section will now only display if the Profile2 module is active.
 
 1.0.5 (10/30/13)
   *Fixed some issues related to the custom color option.
