@@ -53,7 +53,36 @@
 				win.location = $(this).val();
 			});
 
+			$.fn.headerToFixed = function (options) {
+
+				var defaults = {
+					speed : 300,
+					windowWidth : $(win).width(),
+					scrollTop : $(win).scrollTop()
+				}, o = $.extend({}, defaults, options), $this = $(this), $clone = $('#logo').clone(), heightHeader = $this.height();
+
+				if (o.windowWidth > 767) {
+					if (o.scrollTop > heightHeader) {
+						if (!$this.hasClass('fixed')) {
+							$this.find('.sixteen').prepend($clone);
+							$this.slideUp(o.speed).addClass('fixed').stop(true, true).slideDown(o.speed);
+						}
+					} else {
+						if ($this.hasClass('fixed')) {
+							$this.stop(true, true).slideUp(o.speed).stop(true, true).removeClass('fixed').slideDown(o.speed);
+							$this.find('.sixteen #logo').fadeOut(o.speed).remove();
+						}
+					}
+				}
+			};
 			
+			if (objNavMenu.fixed) {
+				if (!Modernizr.touch) {
+					$(win).scroll(function () {
+						$('#header').headerToFixed();
+					});
+				}		
+			}
 
 		}());
 
@@ -115,22 +144,8 @@
 
 		/* end Flex Slider */
 
-		/*--------------------------------------------------------------------*/
-		/* Layer Slider														  */
-		/*--------------------------------------------------------------------*/
 
-		(function () {
-
-			var $layer = $('#layerslider');
-
-			if ($layer.length) {
-				$layer.layerSlider(objLayerSlider);
-			}
-
-		}());
-
-		/* end Layer Slider */
-
+		
 		/* ---------------------------------------------------- */
 		/*	Tabs												*/
 		/* ---------------------------------------------------- */
@@ -822,24 +837,7 @@
 
 			if ($('.bwWrapper').length) {
 
-				var	obj = {
-					'.flexslider' : '.flex-direction-nav',
-					'.image-post-slider' : '.post-slider-nav',
-					'.image-gallery-slider' : '.gallery-slider-nav'
-				}, $bw = $('.bwWrapper:not(.badge)');
-
-				$.fn.extendBW = function (object) {
-					$.each(object, function (cont, nav) {
-						$(cont).on('mouseenter', ' ' + nav + ' ' + 'a', function () {
-							$(cont).find('canvas, .BWfade').hide();
-							$(nav).on('mouseleave', function () {
-								$(cont).find('canvas, .BWfade').show(0);
-							});
-						});
-					});
-				};
-
-				$.fn.extendBW(obj);
+				var $bw = $('.bwWrapper:not(.badge)');
 
 				if (Modernizr.touch) {
 
@@ -895,7 +893,7 @@
 
 					$itemsFilter.find('a').removeClass('active');
 					$this.addClass('active');
-
+					
 					if (currentOption) {
 						if (currentOption !== '*') {
 							currentOption = currentOption.replace(currentOption, '.' + currentOption);
@@ -1163,7 +1161,7 @@
 
 		}());
 
-		/* end Detail Detect touch */
+		/* end Detail Detail Blocks	 */
 
 		/* ---------------------------------------------------- */
 		/*	Detail Detect touch									*/
@@ -1211,6 +1209,85 @@
 		}());
 
 		/* end Google Maps */
+
+		/* ---------------------------------------------------- */
+		/*	Contact Form										*/
+		/* ---------------------------------------------------- */
+
+		(function () {
+
+			if ($('.contact-form').length) {
+
+				var $form = $('.contact-form'),
+					$loader = '<span>Loader...</span>';
+				$form.append('<div class="hide contact-form-responce" />');
+
+				$form.each(function () {
+
+					var $this = $(this), $response = $('.contact-form-responce', $this).append('<p></p>');
+
+					$this.submit(function () {
+
+						$response.find('p').html($loader);
+
+						var data = {
+							action: "contact_form_request",
+							values: $this.serialize()
+						};
+
+						//send data to server
+						$.post("php/contact-send.php", data, function (response) {
+
+							response = $.parseJSON(response);
+
+							$(".wrong-data", $this).removeClass("wrong-data");
+							$response.find('span').remove();
+
+							if (response.is_errors) {
+
+								$response.find('p').removeClass().addClass("error");
+								$.each(response.info, function (input_name, input_label) {
+									$("[name=" + input_name + "]", $this).addClass("wrong-data");
+									$response.find('p').append('Please enter correctly "' + input_label + '"!' + '</br>');
+								});
+
+								$response.show(300);
+
+							} else {
+
+								$response.find('p').removeClass().addClass('success');
+
+								if (response.info === 'success') {
+									$response.find('p').append('Your email has been sent!');
+									$this.find('input:not(input[type="submit"], button), textarea, select').val('').attr('checked', false);
+									$response.show(300).delay(2500).hide(400);
+								}
+
+								if (response.info === 'server_fail') {
+									$response.find('p').append('Server failed. Send later!');
+									$response.show(300);
+								}
+							}
+
+							// Scroll to bottom of the form to show respond message
+							var bottomPosition = $response.offset().top;
+
+							if ($(doc).scrollTop() < bottomPosition) {
+								$('html, body').animate({ scrollTop : bottomPosition });
+							}
+
+						});
+
+						return false;
+
+					});
+				});
+
+			}
+
+		}());
+
+		/* end Contact Form */
 
 		/* ---------------------------------------------------- */
 		/*	Ajax Navigation										*/
