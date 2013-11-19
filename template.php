@@ -8,8 +8,8 @@ $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
 
 
 /**
- * Strip unwanted rel attributes from meta tags in <head>.
- */ 
+ * Modify theme_html_head_alter()
+ */
 function goodnex_html_head_alter(&$head_elements) {
 	unset($head_elements['system_meta_generator']);
 	foreach ($head_elements as $key => $element) {
@@ -23,8 +23,7 @@ function goodnex_html_head_alter(&$head_elements) {
 }
 
 /**
- * Overwrite theme_button()
- * @file template.php
+ * Modify theme_button()
  */
 function goodnex_button($variables) {
 
@@ -41,8 +40,8 @@ function goodnex_button($variables) {
 }
 
 /**
- * Apply alternate UL class to Drupal tabs.
- */ 
+ * Modify theme_menu_local_tasks()
+ */
 function goodnex_menu_local_tasks(&$variables) {
   $output = '';
 
@@ -63,8 +62,8 @@ function goodnex_menu_local_tasks(&$variables) {
 }
 
 /**
- * Assign theme hook suggestions for custom templates.
- */  
+ * Modify theme_preprocess_page()
+ */
 function goodnex_preprocess_page(&$vars, $hook) {
   if (isset($vars['node'])) {
     $suggest = "page__node__{$vars['node']->type}";
@@ -82,6 +81,9 @@ function goodnex_preprocess_page(&$vars, $hook) {
   }
 }
 
+/**
+ * Impelements hook_form_alter()
+ */
 function goodnex_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
     $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
@@ -122,6 +124,9 @@ function goodnex_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
 
 }
 
+/**
+* Custom pagination function().
+*/
 function goodnex_pagination($node, $mode = 'n') {
   if (!function_exists('prev_next_nid')) {
     return NULL;
@@ -160,7 +165,7 @@ function goodnex_pagination($node, $mode = 'n') {
 
 
 /**
- * Define some variables for use in theme templates.
+ * Modify theme_process_page()
  */
 function goodnex_process_page(&$variables) {	
   // Assign site name and slogan toggle theme settings to variables.
@@ -176,7 +181,7 @@ function goodnex_process_page(&$variables) {
 }	
 
 /**
- * Preprocess variables for the username.
+ * Modify theme_preprocess_username()
  */
 function goodnex_preprocess_username(&$vars) {
   global $theme_key;
@@ -191,6 +196,9 @@ function goodnex_preprocess_username(&$vars) {
   }
 }
 
+/**
+ * Modify theme_menu_link()
+ */
 function goodnex_menu_link(array $variables) {
   //unset all the classes
   unset($variables['element']['#attributes']['class']);
@@ -219,10 +227,8 @@ function goodnex_menu_tree(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
 }
 
-
-
 /**
- * Overrides theme_item_list().
+ * Modify theme_item_list()
  */
 function goodnex_item_list($vars) {
   if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
@@ -269,7 +275,7 @@ function goodnex_item_list($vars) {
 }
 
 /**
- * Overrides theme_pager_link().
+ * Modify theme_pager_link()
  */
 function goodnex_pager_link($variables) {
   $text = $variables['text'];
@@ -320,7 +326,7 @@ function goodnex_pager_link($variables) {
 }
 
 /**
- * Add a comma delimiter between several field types.
+ * Modify theme_field()
  */
 function goodnex_field($variables) {
  
