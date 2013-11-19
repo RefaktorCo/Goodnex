@@ -6,7 +6,7 @@
  */
 ?>
 
-<span data-mode="" class="acc-trigger <?php if ( render($content['field_active']) == 'true' ) { print "active"; } ?>">
+<span data-mode="" class="acc-trigger <?php if ( !render($content['field_active']) == 'true' ) { print "active"; } ?>">
 	<a href="#"><?php echo $title; ?></a>
 </span>
 

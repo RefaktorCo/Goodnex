@@ -129,9 +129,7 @@
     </div>
     
     <div id="after-content" class="container">
-      <div class="sixteen columns">
-        <?php print render($page['after_content']); ?>
-      </div>
+      <?php print render($page['after_content']); ?>
     </div>
     
   </section> 

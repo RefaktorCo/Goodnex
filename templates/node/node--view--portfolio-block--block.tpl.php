@@ -9,7 +9,7 @@ $replacement = " ";
 
   <?php if (render($content['field_image'])): ?>  
 	<div class="preloader">
-		<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" rel="folio">
+		<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" rel="folio" title="">
 			<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
 		</a>							
 	</div><!--/ .preloader-->
