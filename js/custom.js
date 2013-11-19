@@ -206,7 +206,7 @@
 
 					var $trigger = $('.acc-trigger', this);
 
-					
+					$trigger.first().addClass('active').next().show();
 
 					$trigger.on('click', function (e) {
 

@@ -1,5 +1,7 @@
 1.0.7 (11/18/13)
   *Fixed issue with pager on Portfolio view block.
+  *Renamed several view node templates to fix issue with adding additional displays.
+  *Removed unecessary "active" field option in FAQ content type.
 
 1.0.6 (11/11/13)
   *Fixed additional issues with custom color in FireFox browser.
