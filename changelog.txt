@@ -1,3 +1,10 @@
+1.0.8 (12/9/13)
+  *Fixed issue with sticky navigation option.
+  *Updated Drupal Core in full install to latest version.
+  *Updated Mega Slider to latest version.
+  *Fixed issue with links not working inside tabs element.
+  *Fixed issue with body field wrappers.
+
 1.0.7 (11/19/13)
   *Fixed issue with pager on Portfolio view block.
   *Renamed several view node templates to fix issue with adding additional displays.

@@ -144,7 +144,7 @@
 						$(this).children('li').first().addClass('active').stop(true, true).show();
 					});
 
-					$(val).on('click', 'a', function (e) {
+					$(val).on('click', '.tabs-nav a', function (e) {
 
 						var $this = $(this).parent('li'), $index = $this.index();
 						$this.siblings().removeClass('active').end().addClass('active');
