@@ -49,9 +49,9 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 
 		<?php
       $teaser = render($content['body']);
-      echo substr($teaser, 0, 100)."...";
+      echo substr($teaser, 0, 264)."...";
     ?>
-
+	</div></div></div>
 	</div><!--/ .entry-body-->
 
 </div><!--/ .item-->
