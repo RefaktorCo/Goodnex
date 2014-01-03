@@ -1,3 +1,9 @@
+1.0.9 (01/04/14)
+  *Updated Drupal Core in full install.
+  *Fixed JS related bugs.
+  *Fixed issue with latest posts view block.
+  *Removed testing field in Detail Boxes content type.
+
 1.0.8 (12/9/13)
   *Fixed issue with sticky navigation option.
   *Updated Drupal Core in full install to latest version.

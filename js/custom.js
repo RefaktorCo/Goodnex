@@ -52,16 +52,8 @@
 			$('.responsive-nav').on('change', function () {
 				win.location = $(this).val();
 			});
-
-		
 			
-			if (objNavMenu.fixed) {
-				if (!Modernizr.touch) {
-					$(win).scroll(function () {
-						$('#header').headerToFixed();
-					});
-				}		
-			}
+			
 
 		}());
 
