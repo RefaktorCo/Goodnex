@@ -48,10 +48,10 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	<div class="entry-body">
 
 		<?php
-      $teaser = render($content['body']);
-      echo substr($teaser, 0, 264)."...";
+      $teaser = strip_tags(render($content['body']));
+      echo substr($teaser, 0, 100)."...";
     ?>
-	</div></div></div>
+	
 	</div><!--/ .entry-body-->
 
 </div><!--/ .item-->
