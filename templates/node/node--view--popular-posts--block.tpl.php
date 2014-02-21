@@ -8,10 +8,12 @@
 	</div>
 	<div class="post-holder">
 		<a href="<?php echo $node_url; ?>"><h6><?php echo $title; ?></h6></a>
+		<p>
 		<?php
-      $teaser = render($content['body']);
-      echo substr($teaser, 0, 215)."...";
+      $teaser = strip_tags(render($content['body']));
+      echo substr($teaser, 0, 47)."...";
     ?>
+		</p>
 		<span><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span>
 	</div><!--/ .post-holder-->
 </li>

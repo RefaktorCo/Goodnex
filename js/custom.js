@@ -1021,9 +1021,9 @@
 					
 				methods = {
 					colorState: function (elem, color) {
-						$(elem).addClass('stateColor').children('.transform').css({
-							backgroundColor: color
-						});					
+						$(elem).addClass('stateColor').children('.transform').css(
+							'cssText', 'background-color: '+color+' !important'
+						);					
 					},
 					colorHover : function (el, color) {
 						
@@ -1034,9 +1034,9 @@
 						if (!empty(colorHover) && empty(colorState)) {
 							
 						} else if (!empty(colorState)) {
-							$(el).css({
-								backgroundColor: color
-							});							
+							$(el).css(
+								'cssText', 'background-color: '+color+' !important'
+							);							
 						}
 
 					},
