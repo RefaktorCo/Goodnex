@@ -241,7 +241,7 @@ function goodnex_menu_tree(&$variables) {
  * Modify theme_item_list()
  */
 function goodnex_item_list($vars) {
-  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
+  if (isset($vars['attributes']['class']) && in_array('pager', (array)$vars['attributes']['class'])) {
     unset($vars['attributes']['class']);
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
