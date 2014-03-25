@@ -1,6 +1,7 @@
-1.1 (02/10/14)
+1.1 (03/20/14)
   *Better fix for latest posts and popular posts view blocks.
   *Fixed bug with detail boxes and custom theme color.
+  *Removed unnecessary plugin from custom.js.
 
 1.0.9 (01/04/14)
   *Updated Drupal Core in full install.
