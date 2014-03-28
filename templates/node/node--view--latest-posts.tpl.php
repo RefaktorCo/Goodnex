@@ -41,8 +41,8 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	<h6 class="title"><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h6>
 
 	<div class="entry-meta">
-		<span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span>
-		<span class="comments"><a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span>
+		<?php if ( theme_get_setting('meta_date') == '1' ) : ?><span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span><?php endif; ?>
+		<?php if ( theme_get_setting('meta_comments') == '1' ) : ?><span class="comments"><a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span><?php endif; ?>
 	</div><!--/ .entry-meta-->
 
 	<div class="entry-body">

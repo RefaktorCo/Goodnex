@@ -4,17 +4,6 @@
  * Goodnex's theme implementation to display a single Portfolio node.
  */
 global $base_url; 
-$next = goodnex_pagination($node, 'n');
-$prev = goodnex_pagination($node, 'p');
-
-if ($next != NULL) { 
-  $next_url = url('node/' . $next, array('absolute' => TRUE));
-}
-
-if ($prev != NULL) { 
-  $prev_url = url('node/' . $prev, array('absolute' => TRUE));
-}
-
 $image_slide = "";
 
 if ($items = field_get_items('node', $node, 'field_portfolio_slider')) {
@@ -31,14 +20,14 @@ $counter = count($items);
 
 ?>
 
-<?php if($page && module_exists('prev_next')): ?>
+<?php if($page): ?>
 <div class="portfolio-controls <?php global $user; if ( user_is_logged_in() ) { echo "portfolio-controls-user"; } ?>">
-  <?php if ($prev != NULL): ?>
-	  <a class="controls-prev" href="<?php echo $prev_url; ?>">Prev</a>
+  <?php if ( goodnex_node_pagination($node, 'p') != NULL ) : ?>
+	  <a class="controls-prev" href="<?php print url('node/' . goodnex_node_pagination($node, 'p'), array('absolute' => TRUE)); ?>">Prev</a>
 	<?php endif; ?>
 	<a class="controls-all" href="<?php echo $base_url; ?>/portfolio">all</a>
-	<?php if ($next != NULL): ?>
-	  <a class="controls-next" href="<?php echo $next_url; ?>">Next</a>
+	<?php if ( goodnex_node_pagination($node, 'n') != NULL ) : ?>
+	  <a class="controls-next" href="<?php print url('node/' . goodnex_node_pagination($node, 'n'), array('absolute' => TRUE)); ?>">Next</a>
 	<?php endif; ?>  
 </div><!--/ .portfolio-controls-->	
 <?php endif; ?>

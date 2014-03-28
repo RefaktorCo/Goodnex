@@ -11,8 +11,8 @@ $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
  */
 function goodnex_js_alter(&$js) {
   if (isset($js['misc/jquery.js'])) {
-       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js';
-       $js['misc/jquery.js']['version'] = '1.8.3';
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.7.2';
     $js['misc/jquery.js']['data'] = $jsPath;
   }
 }
@@ -135,44 +135,35 @@ function goodnex_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
-* Custom pagination function().
-*/
-function goodnex_pagination($node, $mode = 'n') {
-  if (!function_exists('prev_next_nid')) {
-    return NULL;
+ * Theme node pagination function().
+ */
+function goodnex_node_pagination($node, $mode = 'n') {
+  $query = new EntityFieldQuery();
+	$query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', $node->type);
+  $result = $query->execute();
+  $nids = array_keys($result['node']);
+  
+  while ($node->nid != current($nids)) {
+    next($nids);
   }
- 
+  
   switch($mode) {
     case 'p':
-      $n_nid = prev_next_nid($node->nid, 'prev');
-      $link_text = "Previous post";
+      prev($nids);
     break;
 		
     case 'n':
-      $n_nid = prev_next_nid($node->nid, 'next');
-      $link_text = "Next post";
+      next($nids);
     break;
 		
     default:
     return NULL;
   }
- 
-  if ($n_nid) {
-    $n_node = '';
-    $n_node = node_load($n_nid);
-		
-    switch($n_node->type) {	
-      case 'portfolio': 
-        $id =  $n_node->nid; 
-      return $id; 
-      
-      case 'article': 
-        $html = l($link_text, 'node/'.$n_node->nid); 
-      return $html;
-    }
-  }
+  
+  return current($nids);
 }
-
 
 /**
  * Modify theme_process_page()

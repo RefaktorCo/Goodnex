@@ -1,7 +1,10 @@
-1.1 (03/20/14)
+1.1 (03/28/14)
+	*Updated Drupal Core in full install.
   *Better fix for latest posts and popular posts view blocks.
   *Fixed bug with detail boxes and custom theme color.
-  *Removed unnecessary plugin from custom.js.
+  *Added post meta theme setting conditionals to latest posts view template.
+  *Implemented custom node pagination function.
+  *Temporary fix for Chrome Google Font caching bug.
 
 1.0.9 (01/04/14)
   *Updated Drupal Core in full install.
