@@ -11,19 +11,21 @@
 <!--[if gt IE 8]> <!--> <html class="
 not-ie" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"> <!--<![endif]-->
 <head>
+
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <?php print $styles; ?>
 <?php print $scripts; ?>
   
-  <!-- IE Fix for HTML5 Tags -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  
-	<!-- Web Fonts  -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600italic|Handlee' rel='stylesheet' type='text/css'>
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 
+<!-- Google Web Fonts
+================================================== -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600italic|Handlee' rel='stylesheet' type='text/css'>  
+	
 <?php goodnex_user_css(); ?>  
 
 <?php if ( (theme_get_setting('sticky_header') == '1') ): ?>
