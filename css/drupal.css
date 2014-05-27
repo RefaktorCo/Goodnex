@@ -74,7 +74,7 @@ ul.clients-items li,
 	color: #b2b2b2;
 }
 
-#contact-site-form label, #comment-form-wrapper label {
+#contact-site-form label, .comment-form label {
 	display: inline-block;
 }
 
@@ -195,7 +195,7 @@ header h1 {
   content: "\f0e0";
 }
 
-#comments .form-item-subject:before, .contact-form .form-item-subject:before { 
+#comments .form-item-subject:before, .contact-form .form-item-subject:before, .comment-form .form-item-subject:before { 
 	content: "\f0e5";
 }
 

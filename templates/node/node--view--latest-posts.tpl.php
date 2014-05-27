@@ -38,7 +38,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 
 	<?php endif; ?>
 
-	<h6 class="title"><a href="<?php echo $node_url; ?>"><?php echo $title; ?></a></h6>
+	<h6 class="title"><a href="<?php echo $node_url; ?>"><?php echo substr($title, 0, 10)."..."; ?></a></h6>
 
 	<div class="entry-meta">
 		<?php if ( theme_get_setting('meta_date') == '1' ) : ?><span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span><?php endif; ?>

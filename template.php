@@ -141,6 +141,7 @@ function goodnex_node_pagination($node, $mode = 'n') {
   $query = new EntityFieldQuery();
 	$query
     ->entityCondition('entity_type', 'node')
+    ->propertyCondition('status', 1)
     ->entityCondition('bundle', $node->type);
   $result = $query->execute();
   $nids = array_keys($result['node']);
