@@ -754,47 +754,43 @@
 
 		(function () {
 
-			if ($('.single-image.link-icon').length || $('.single-image.plus-icon').length || $('.single-image.video-icon').length) {
-
-				// Link Icon
-				$('.single-image.link-icon, .single-image.plus-icon').fancybox({
-					'titleShow': true,
-					'transitionIn': 'fade',
-					'transitionOut': 'fade',
-					'easingIn': 'easeOutBack',
-					'easingOut': 'easeInBack',
-					helpers: {
-						title: {
-							type: 'over'
-						}
+			// Link Icon
+			$('.single-image.link-icon, .single-image.plus-icon').fancybox({
+				'titleShow': true,
+				'transitionIn': 'fade',
+				'transitionOut': 'fade',
+				'easingIn': 'easeOutBack',
+				'easingOut': 'easeInBack',
+				helpers: {
+					title: {
+						type: 'over'
 					}
-				}).each(function () {
-					$(this).append('<span class="curtain"></span>');
-				});
+				}
+			}).each(function () {
+				$(this).append('<span class="curtain"></span>');
+			});
 
-				// Video Icon
-				$('.single-image.video-icon').fancybox({
-					type: 'iframe',
-					openEffect: 'fade',
-					closeEffect: 'fade',
-					nextEffect: 'fade',
-					prevEffect: 'fade',
-					helpers: {
-						title: {
-							type: 'over'
-						}
-					},
-					width: '70%',
-					height: '70%',
-					maxWidth: 800,
-					maxHeight: 600,
-					fitToView: false,
-					autoSize: false
-				}).each(function () {
-					$(this).append('<span class="curtain"></span>');
-				});
-
-			}
+			// Video Icon
+			$('.single-image.video-icon').fancybox({
+				type: 'iframe',
+				openEffect: 'fade',
+				closeEffect: 'fade',
+				nextEffect: 'fade',
+				prevEffect: 'fade',
+				helpers: {
+					title: {
+						type: 'over'
+					}
+				},
+				width: '70%',
+				height: '70%',
+				maxWidth: 800,
+				maxHeight: 600,
+				fitToView: false,
+				autoSize: false
+			}).each(function () {
+				$(this).append('<span class="curtain"></span>');
+			});
 
 		}());
 
