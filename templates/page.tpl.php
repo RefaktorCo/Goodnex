@@ -100,6 +100,10 @@
 		  <section id="main" class="twelve columns">
 		  <?php endif; ?>
 		  
+		  <?php if ( (!$page['sidebar_right']) AND (!$page['sidebar_left']) ): ?>
+		  <section id="main" class="sixteen columns">
+		  <?php endif; ?>
+		  
 			  <?php print $messages; ?>
 			  
 	     	<?php if ($tabs = render($tabs)): ?>
@@ -116,9 +120,7 @@
 	
 			  <?php if (isset($page['content'])) { print render($page['content']); } ?>
 			  
-			<?php if ( ($page['sidebar_right']) OR ($page['sidebar_left']) ): ?>
-		  </section>
-		  <?php endif; ?>
+			</section>
 		  
 		  <?php if ( ($page['sidebar_right']) ) : ?>
 		  <aside id="sidebar" class="four columns">
