@@ -11,7 +11,7 @@
     
       <div class="eight columns">
 
-	      <?php if (isset($page['header_left'])) : ?>
+	      <?php if (render($page['header_left'])) : ?>
 		      <?php print render($page['header_left']); ?>
 		    <?php endif; ?>
 	    
@@ -43,37 +43,37 @@
 		    
       </div>
       
+      <?php if (render($page['header_right'])) : ?>
       <div class="eight columns">
         <?php print render($page['header_right']); ?>
-     </div>  
-     
-     <div class="clear"></div>
-     
-     <div class="sixteen columns">
-				<div class="menu-container clearfix">
+      </div> 
+      <?php endif; ?>
+       
+	    <div class="clear"></div>
+	     
+	    <div class="sixteen columns">
+			  <div class="menu-container clearfix">
 					<nav id="navigation" class="navigation">
 					  <div class="menu">
 					    <?php print render($page['header_menu']); ?>
 					  </div>  
 					</nav>
-					
-					<?php if ( ($page['header_search']) ): ?>
-						<div class="search-wrapper">
-						  <?php print render($page['header_search']); ?>
-						</div><!--/ .search-wrapper--> 
+						
+					<?php if (render($page['header_search']) ): ?>
+					<div class="search-wrapper">
+					  <?php print render($page['header_search']); ?>
+					</div><!--/ .search-wrapper--> 
 					<?php endif; ?>
-					
+						
 				</div>
-     </div>
+	    </div>
      
     </div>  				
 	</header>
 	<?php print render($page['before_content_no_wrap']); ?>
   <section id="content">
 	  <div class="container">
-	    
 	    <?php if ($title) : ?>
-			
 	    <div class="page-header clearfix">
             
 		    <?php if ( ($breadcrumb) AND (theme_get_setting('breadcrumbs') == '1') ): ?>
@@ -93,17 +93,13 @@
 		  <?php endif; ?>
 		  
 		  <?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ): ?>
-		  <section id="main" class="eight columns">
+		  <section class="eight columns">
 		  <?php endif; ?>
 	   
 	    <?php if ( (($page['sidebar_right']) AND (!$page['sidebar_left'])) OR ($page['sidebar_left']) AND (!$page['sidebar_right']) ): ?>
-		  <section id="main" class="twelve columns">
+		  <section class="twelve columns">
 		  <?php endif; ?>
-		  
-		  <?php if ( (!$page['sidebar_right']) AND (!$page['sidebar_left']) ): ?>
-		  <section id="main" class="sixteen columns">
-		  <?php endif; ?>
-		  
+
 			  <?php print $messages; ?>
 			  
 	     	<?php if ($tabs = render($tabs)): ?>
@@ -117,10 +113,12 @@
 	          <?php print render($action_links); ?>
 	        </ul>
 	      <?php endif; ?>
-	
+	  
 			  <?php if (isset($page['content'])) { print render($page['content']); } ?>
 			  
-			</section>
+			<?php if ( ($page['sidebar_right']) OR ($page['sidebar_left']) ): ?>
+		  </section>
+		  <?php endif; ?>
 		  
 		  <?php if ( ($page['sidebar_right']) ) : ?>
 		  <aside id="sidebar" class="four columns">
@@ -130,9 +128,11 @@
 		    
     </div>
     
+    <?php if (render($page['after_content'])) : ?> 
     <div id="after-content" class="container">
       <?php print render($page['after_content']); ?>
     </div>
+    <?php endif; ?>
     
   </section> 
 
@@ -141,36 +141,36 @@
   <footer id="footer">
     <div class="container">
 		  
-	    <div class="four columns">
-	      <?php if (isset($page['footer_1'])) : ?>
+		  <?php if (isset($page['footer_1'])) : ?> 
+	      <div class="four columns">
 			    <?php print render($page['footer_1']); ?>
-			  <?php endif; ?>
-	    </div>
+	      </div>
+	    <?php endif; ?>
 	    
-	    <div class="four columns">
-	      <?php if (isset($page['footer_2'])) : ?>
+	    <?php if (isset($page['footer_2'])) : ?> 
+	      <div class="four columns">
 			    <?php print render($page['footer_2']); ?>
-			  <?php endif; ?>
-	    </div>
+	      </div>
+	    <?php endif; ?>
 	    
-	    <div class="four columns">
-	      <?php if (isset($page['footer_3'])) : ?>
+	    <?php if (isset($page['footer_3'])) : ?> 
+	      <div class="four columns">
 			    <?php print render($page['footer_3']); ?>
-			  <?php endif; ?>
-	    </div>
+	      </div>
+	    <?php endif; ?>
 	    
-	    <div class="four columns">
-	      <?php if (isset($page['footer_4'])) : ?>
+	    <?php if (isset($page['footer_4'])) : ?> 
+	      <div class="four columns">
 			    <?php print render($page['footer_4']); ?>
-			  <?php endif; ?>
-	    </div>
+	      </div>
+	    <?php endif; ?>
 
       <div class="clear"></div>
       
       <div class="sixteen columns">
         <div class="adjective clearfix">
 		   		    
-				  <?php if (isset($page['footer_bottom'])) : ?>
+				  <?php if (render($page['footer_bottom'])) : ?>
 				    <?php print render($page['footer_bottom']); ?>
 				  <?php endif; ?>
 		  
