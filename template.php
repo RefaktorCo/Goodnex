@@ -234,14 +234,14 @@ function goodnex_menu_tree(&$variables) {
  */
 function goodnex_item_list($vars) {
   if (isset($vars['attributes']['class']) && in_array('pager', (array)$vars['attributes']['class'])) {
-    unset($vars['attributes']['class']);
+
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
         $item['class'] = array('page-numbers-current current');
         $item['data'] = $item['data'];
       }
       
-      elseif (in_array('pager-item', $item['class'])) {
+      elseif ( is_array($item) && in_array('pager-item', $item['class'])) {
         $item['class'] = array('page-numbers');
         $item['data'] =  $item['data'];
       }

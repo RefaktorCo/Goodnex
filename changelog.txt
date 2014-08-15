@@ -1,3 +1,10 @@
+1.1.1 (08/15/14)
+	*Updated Drupal Core in full install.
+	*Updated MD Slider.
+	*Modified goodnex_item_list() to fix conflict with Views ajax pagination.
+	*Fixed issue with column classes in page.tpl.php
+	*Fixed Flickr feed lightbox issue.
+
 1.1 (03/28/14)
 	*Updated Drupal Core in full install.
   *Better fix for latest posts and popular posts view blocks.

@@ -3,9 +3,12 @@
 		<div class="detail-box">
 	
 			<div class="detail-entry">
-	
-				<i class="detail-icon <?php print render($content['field_detail_icon']); ?>"></i>
-	
+	      
+	      <?php if (render($content['field_detail_icon'])): ?>
+				  <i class="detail-icon <?php print render($content['field_detail_icon']); ?>"></i>
+				<?php endif;?>
+				
+				
 				<h5><?php print render($content['field_detail_caption']); ?></h5>
 	
 				<p>
