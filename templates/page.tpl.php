@@ -93,11 +93,11 @@
 		  <?php endif; ?>
 		  
 		  <?php if ( ($page['sidebar_right']) AND ($page['sidebar_left']) ): ?>
-		  <section class="eight columns">
+		  <section id="main" class="eight columns">
 		  <?php endif; ?>
 	   
 	    <?php if ( (($page['sidebar_right']) AND (!$page['sidebar_left'])) OR ($page['sidebar_left']) AND (!$page['sidebar_right']) ): ?>
-		  <section class="twelve columns">
+		  <section id="main" class="twelve columns">
 		  <?php endif; ?>
 
 			  <?php print $messages; ?>
