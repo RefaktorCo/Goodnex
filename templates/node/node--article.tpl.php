@@ -84,9 +84,7 @@ $counter = count($items);
 	<?php endif; ?>
 	
 	<?php if (render($content['field_before_title'])) : ?>
-	  
-	    <?php print render($content['field_before_title']); ?>
-
+	  <?php print render($content['field_before_title']); ?>
 	<?php endif; ?>
 		
   <div class="entry">
@@ -105,7 +103,18 @@ $counter = count($items);
 			<?php if ( (render($content['field_tags'])) AND (theme_get_setting('meta_tags')) == '1' ): ?>  
 			  <span class="tag"><?php print render($content['field_tags']); ?></span>
 			<?php endif; ?>  
-			<?php if ( theme_get_setting('meta_comments') == '1' ) : ?><span class="comments"><a href="<?php print $node_url;?>/#comments"><?php print $comment_count; ?> comment<?php if ($comment_count != "1" ) { echo "s"; } ?></a></span><?php endif; ?>
+			<?php if ( theme_get_setting('meta_comments') == '1' ) : ?>
+			  <span class="comments">
+			    <a href="<?php print $node_url;?>/#comments">
+			    <?php if ($comment_count != "1" ): ?>
+			      <?php print $comment_count; ?> <?php print t('comments'); ?>
+			    <?php endif; ?>  
+			    <?php if ($comment_count == "1" ): ?>
+			      <?php print $comment_count; ?> <?php print t('comment'); ?>
+			    <?php endif; ?> 
+			    </a>
+			  </span>
+			<?php endif; ?>
 		</div><!--/ .entry-meta-->
   <?php endif; ?>
 
