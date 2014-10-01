@@ -201,7 +201,7 @@ function goodnex_preprocess_username(&$vars) {
 /**
  * Modify theme_menu_link()
  */
-function goodnex_menu_link(array $variables) {
+function goodnex_menu_link__header_menu(array $variables) {
   //unset all the classes
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
@@ -225,9 +225,52 @@ function goodnex_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
-function goodnex_menu_tree(&$variables) {
+function goodnex_menu_tree__header_menu(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
 }
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function goodnex_block_view_alter(&$data, $block) {
+
+  if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {   
+    $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
+
+    foreach($data['content'] as &$key):
+     
+      if (isset($key['#theme'])) {
+        $key['#theme'] = 'menu_link__header_menu';
+      }
+      if (isset($key['#below']['#theme_wrappers'])) {
+        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+      }
+      
+      if (isset($key['#below'])) {
+        foreach($key['#below'] as &$key2):
+        
+           if (isset($key2['#theme'])) {
+             $key2['#theme'] = 'menu_link__header_menu';
+           }
+           if (isset($key2['#below']['#theme_wrappers'])) {
+             $key2['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
+           }
+           if (isset($key2['#below'])) {
+              foreach($key2['#below'] as &$key3):
+              
+                if (isset($key3['#theme'])) {
+                  $key3['#theme'] = 'menu_link__header_menu';
+                }
+              endforeach;
+              
+           }
+        endforeach;
+       
+      }
+    endforeach;
+  }
+}
+
 
 /**
  * Modify theme_item_list()

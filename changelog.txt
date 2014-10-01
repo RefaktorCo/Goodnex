@@ -1,7 +1,8 @@
-1.1.2 (09/24/14)
+1.1.2 (09/30/14)
   *Fixed empty sticky.js file.
   *Updated MD Slider.
-
+  *Made header menu styling region specific.
+  
 1.1.1 (08/15/14)
 	*Updated Drupal Core in full install.
 	*Updated MD Slider.
