@@ -207,6 +207,12 @@ function goodnex_menu_link__header_menu(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
   
+  // Add support for HTML output in menu descriptions
+  $element['#localized_options']['html'] = TRUE;
+  if ($element['#original_link']['menu_name'] == "main-menu" && isset($element['#localized_options']['attributes']['title'])){
+    $element['#title'] .= $element['#localized_options']['attributes']['title'] ;
+  }
+  
   if($variables['element']['#attributes']) {
     $sub_menu = '';
   }
@@ -214,6 +220,9 @@ function goodnex_menu_link__header_menu(array $variables) {
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
   }
+  
+  
+ 
   
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   

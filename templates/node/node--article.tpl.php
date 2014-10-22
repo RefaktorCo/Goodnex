@@ -98,7 +98,7 @@ $counter = count($items);
 
   <?php if ($display_submitted): ?>
     <div class="entry-meta">
-			<?php if ( theme_get_setting('meta_date') == '1' ) : ?><span class="date"><?php print format_date($node->created, 'custom', 'M d, Y'); ?></span><?php endif; ?>
+			<?php if ( theme_get_setting('meta_date') == '1' ) : ?><span class="date"><?php print $date; ?></span><?php endif; ?>
 			<?php if ( theme_get_setting('meta_author') == '1' ) : ?><span class="author"><?php echo t('By'); ?> <?php print $name; ?></span><?php endif; ?>
 			<?php if ( (render($content['field_tags'])) AND (theme_get_setting('meta_tags')) == '1' ): ?>  
 			  <span class="tag"><?php print render($content['field_tags']); ?></span>
