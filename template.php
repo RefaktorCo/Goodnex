@@ -6,10 +6,15 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
 
+/* Update Drupal's version of jQuery */
+function goodnex_js_alter(&$js) {
+  if (isset($js['misc/jquery.js'])) {
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.8.2';
+    $js['misc/jquery.js']['data'] = $jsPath;
+  }
+}
 
-/**
- * Modify theme_html_head_alter()
- */
 function goodnex_html_head_alter(&$head_elements) {
 	unset($head_elements['system_meta_generator']);
 	foreach ($head_elements as $key => $element) {
@@ -23,47 +28,8 @@ function goodnex_html_head_alter(&$head_elements) {
 }
 
 /**
- * Modify theme_button()
- */
-function goodnex_button($variables) {
-
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'submit';
-  element_set_attributes($element, array('id', 'name', 'value'));
-
-  $element['#attributes']['class'][] = 'button default form-' . $element['#button_type'];
-  if (!empty($element['#attributes']['disabled'])) {
-    $element['#attributes']['class'][] = 'form-button-disabled';
-  }
-
-  return '<input' . drupal_attributes($element['#attributes']) . ' />';
-}
-
-/**
- * Modify theme_menu_local_tasks()
- */
-function goodnex_menu_local_tasks(&$variables) {
-  $output = '';
-
-  if (!empty($variables['primary'])) {
-    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
-    $variables['primary']['#prefix'] .= '<ul class="tabs-nav clearfix">';
-    $variables['primary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['primary']);
-  }
-  if (!empty($variables['secondary'])) {
-    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-    $variables['secondary']['#prefix'] .= '<ul class="tabs-nav clearfix">';
-    $variables['secondary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['secondary']);
-  }
-
-  return $output;
-}
-
-/**
- * Modify theme_preprocess_page()
- */
+ * Assign theme hook suggestions for custom templates.
+ */  
 function goodnex_preprocess_page(&$vars, $hook) {
   if (isset($vars['node'])) {
     $suggest = "page__node__{$vars['node']->type}";
@@ -81,9 +47,6 @@ function goodnex_preprocess_page(&$vars, $hook) {
   }
 }
 
-/**
- * Impelements hook_form_alter()
- */
 function goodnex_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
     $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
@@ -108,56 +71,45 @@ function goodnex_form_alter(&$form, &$form_state, $form_id) {
   }
 } 
 
-/**
-* Implements hook_form_contact_site_form_alter().
-*/
-function goodnex_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
-  global $user;
-  
-	$form['mail'] = array(
-	  '#type' => 'textfield',
-	  '#title' => t('Email'),
-	  '#maxlength' => 255,
-	  '#default_value' => $user->uid ? $user->mail : '',
-	  '#required' => TRUE,
-	);
-
-}
-
-/**
- * Theme node pagination function().
- */
-function goodnex_node_pagination($node, $mode = 'n') {
-  $query = new EntityFieldQuery();
-	$query
-    ->entityCondition('entity_type', 'node')
-    ->propertyCondition('status', 1)
-    ->entityCondition('bundle', $node->type);
-  $result = $query->execute();
-  $nids = array_keys($result['node']);
-  
-  while ($node->nid != current($nids)) {
-    next($nids);
+function goodnex_pagination($node, $mode = 'n') {
+  if (!function_exists('prev_next_nid')) {
+    return NULL;
   }
-  
+ 
   switch($mode) {
     case 'p':
-      prev($nids);
+      $n_nid = prev_next_nid($node->nid, 'prev');
+      $link_text = "Previous post";
     break;
 		
     case 'n':
-      next($nids);
+      $n_nid = prev_next_nid($node->nid, 'next');
+      $link_text = "Next post";
     break;
 		
     default:
     return NULL;
   }
-  
-  return current($nids);
+ 
+  if ($n_nid) {
+    $n_node = '';
+    $n_node = node_load($n_nid);
+		
+    switch($n_node->type) {	
+      case 'portfolio': 
+        $id =  $n_node->nid; 
+      return $id; 
+      
+      case 'article': 
+        $html = l($link_text, 'node/'.$n_node->nid); 
+      return $html;
+    }
+  }
 }
 
+
 /**
- * Modify theme_process_page()
+ * Define some variables for use in theme templates.
  */
 function goodnex_process_page(&$variables) {	
   // Assign site name and slogan toggle theme settings to variables.
@@ -173,7 +125,7 @@ function goodnex_process_page(&$variables) {
 }	
 
 /**
- * Modify theme_preprocess_username()
+ * Preprocess variables for the username.
  */
 function goodnex_preprocess_username(&$vars) {
   global $theme_key;
@@ -188,20 +140,11 @@ function goodnex_preprocess_username(&$vars) {
   }
 }
 
-/**
- * Modify theme_menu_link()
- */
-function goodnex_menu_link__header_menu(array $variables) {
+function goodnex_menu_link(array $variables) {
   //unset all the classes
   unset($variables['element']['#attributes']['class']);
   $element = $variables['element'];
   $sub_menu = '';
-  
-  // Add support for HTML output in menu descriptions
-  $element['#localized_options']['html'] = TRUE;
-  if ($element['#original_link']['menu_name'] == "main-menu" && isset($element['#localized_options']['attributes']['title'])){
-    $element['#title'] .= $element['#localized_options']['attributes']['title'] ;
-  }
   
   if($variables['element']['#attributes']) {
     $sub_menu = '';
@@ -210,9 +153,6 @@ function goodnex_menu_link__header_menu(array $variables) {
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
   }
-  
-  
- 
   
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   
@@ -224,66 +164,24 @@ function goodnex_menu_link__header_menu(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
-function goodnex_menu_tree__header_menu(&$variables) {
+function goodnex_menu_tree(&$variables) {
   return '<ul>' . $variables['tree'] . '</ul>';
 }
 
-/**
- * Implements hook_block_view_alter().
- */
-function goodnex_block_view_alter(&$data, $block) {
-
-  if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {   
-    $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
-
-    foreach($data['content'] as &$key):
-     
-      if (isset($key['#theme'])) {
-        $key['#theme'] = 'menu_link__header_menu';
-      }
-      if (isset($key['#below']['#theme_wrappers'])) {
-        $key['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
-      }
-      
-      if (isset($key['#below'])) {
-        foreach($key['#below'] as &$key2):
-        
-           if (isset($key2['#theme'])) {
-             $key2['#theme'] = 'menu_link__header_menu';
-           }
-           if (isset($key2['#below']['#theme_wrappers'])) {
-             $key2['#below']['#theme_wrappers'] = array('menu_tree__header_menu');
-           }
-           if (isset($key2['#below'])) {
-              foreach($key2['#below'] as &$key3):
-              
-                if (isset($key3['#theme'])) {
-                  $key3['#theme'] = 'menu_link__header_menu';
-                }
-              endforeach;
-              
-           }
-        endforeach;
-       
-      }
-    endforeach;
-  }
-}
-
 
 /**
- * Modify theme_item_list()
+ * Overrides theme_item_list().
  */
 function goodnex_item_list($vars) {
-  if (isset($vars['attributes']['class']) && in_array('pager', (array)$vars['attributes']['class'])) {
-
+  if (isset($vars['attributes']['class']) && in_array('pager', $vars['attributes']['class'])) {
+    unset($vars['attributes']['class']);
     foreach ($vars['items'] as $i => &$item) {
       if (in_array('pager-current', $item['class'])) {
         $item['class'] = array('page-numbers-current current');
         $item['data'] = $item['data'];
       }
       
-      elseif ( is_array($item) && in_array('pager-item', $item['class'])) {
+      elseif (in_array('pager-item', $item['class'])) {
         $item['class'] = array('page-numbers');
         $item['data'] =  $item['data'];
       }
@@ -319,58 +217,7 @@ function goodnex_item_list($vars) {
 }
 
 /**
- * Modify theme_pager_link()
- */
-function goodnex_pager_link($variables) {
-  $text = $variables['text'];
-  $page_new = $variables['page_new'];
-  $element = $variables['element'];
-  $parameters = $variables['parameters'];
-  $attributes = $variables['attributes'];
-
-  $page = isset($_GET['page']) ? $_GET['page'] : '';
-  if ($new_page = implode(',', pager_load_array($page_new[$element], $element, explode(',', $page)))) {
-    $parameters['page'] = $new_page;
-  }
-
-  $query = array();
-  if (count($parameters)) {
-    $query = drupal_get_query_parameters($parameters, array());
-  }
-  if ($query_pager = pager_get_query_parameters()) {
-    $query = array_merge($query, $query_pager);
-  }
-
-  // Set each pager link title
-  if (!isset($attributes['title'])) {
-    static $titles = NULL;
-    if (!isset($titles)) {
-      $titles = array(
-        t('« first') => t('Go to first page'),
-        t('‹ prev') => t('Go to previous page'),
-        t('next ›') => t('Go to next page'),
-        t('last »') => t('Go to last page'),
-      );
-    }
-    if (isset($titles[$text])) {
-      $attributes['title'] = $titles[$text];
-    }
-    elseif (is_numeric($text)) {
-      $attributes['title'] = t('Go to page @number', array('@number' => $text));
-    }
-  }
-
-  // @todo l() cannot be used here, since it adds an 'active' class based on the
-  //   path only (which is always the current path for pager links). Apparently,
-  //   none of the pager links is active at any time - but it should still be
-  //   possible to use l() here.
-  // @see http://drupal.org/node/1410574
-  $attributes['href'] = url($_GET['q'], array('query' => $query));
-  return '<a' . drupal_attributes($attributes) . '>' . check_plain($text) . '</a>';
-}
-
-/**
- * Modify theme_field()
+ * Add a comma delimiter between several field types.
  */
 function goodnex_field($variables) {
  
@@ -388,7 +235,15 @@ function goodnex_field($variables) {
     }
     $output .= implode(', ', $rendered_tags);
   }
-    
+  
+  elseif ($variables['element']['#field_name'] == 'body') {
+    // For tags, concatenate into a single, comma-delimitated string.
+    foreach ($variables['items'] as $delta => $item) {
+      $rendered_tags[] = drupal_render($item);
+    }
+    $output .= implode(', ', $rendered_tags);
+  }
+  
   elseif ($variables['element']['#field_name'] == 'field_image') {
     // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
@@ -437,14 +292,6 @@ function goodnex_field($variables) {
     $output .= implode(', ', $rendered_tags);
   }
   
-  elseif ($variables['element']['#field_name'] == 'field_active') {
-    // For tags, concatenate into a single, comma-delimitated string.
-    foreach ($variables['items'] as $delta => $item) {
-      $rendered_tags[] = drupal_render($item);
-    }
-    $output .= implode(', ', $rendered_tags);
-  }
-  
   elseif ($variables['element']['#field_name'] == 'field_detail_color') {
     // For tags, concatenate into a single, comma-delimitated string.
     foreach ($variables['items'] as $delta => $item) {
@@ -452,15 +299,6 @@ function goodnex_field($variables) {
     }
     $output .= implode(', ', $rendered_tags);
   }
-  
-  elseif ($variables['element']['#field_name'] == 'field_detail_color_type') {
-    // For tags, concatenate into a single, comma-delimitated string.
-    foreach ($variables['items'] as $delta => $item) {
-      $rendered_tags[] = drupal_render($item);
-    }
-    $output .= implode(', ', $rendered_tags);
-  }
-
   
   elseif ($variables['element']['#field_name'] == 'field_detail_url') {
     // For tags, concatenate into a single, comma-delimitated string.
@@ -518,110 +356,32 @@ function goodnex_user_css() {
  */
 function goodnex_preprocess_html(&$vars){
   global $parent_root;
-
+  
   $viewport = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
       'name' => 'viewport',
       'content' =>  'width=device-width, initial-scale=1, maximum-scale=1',
-    ),
-    '#weight' => 1,
+    )
   );
   
   $custom_color = array(
     '#type' => 'markup',
-    '#markup' => "<style type='text/css'>.navigation > div > ul ul li:hover > a, .navigation > div > ul ul li.current-menu-item > a, .navigation > div > ul ul li.current-menu-parent > a, .navigation > div > ul ul li.current-menu-ancestor > a, .navigation > div > ul ul li.current_page_item > a, .navigation > div > ul ul li.current_page_parent > a, .navigation > div > ul ul li.current_page_ancestor > a, .simple-pricing-table.type-1 .featured .cost, .simple-pricing-table.type-2 .title, .widget_popular_posts a:hover h6, .portfolio-filter li a:hover, #sidebar .widget li a:hover, .portfolio-filter .active,  .entry-meta span:before, .entry-title h2 a:hover, #sidebar .jta-tweet-a, .entry-meta a:hover, .author-entry h5, #footer a:hover, .quote-author, .tooltip {color: #".theme_get_setting('custom_color')." !important;}</style> ",
-    '#weight' => 2,
-  );
-  
-  $custom_background_color = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>.navigation > div > ul > li:hover > a, .navigation > div > ul > li.current-menu-item > a, .navigation > div > ul > li.current-menu-parent > a, .navigation > div > ul > li.current-menu-ancestor > a, .navigation > div > ul > li.current_page_item > a, .navigation > div > ul > li.current_page_parent > a, .navigation > div > ul > li.current_page_ancestor > a, .scribble .projects-carousel li:hover > a:after, .simple-pricing-table.type-2 .featured .price, .scribble article:hover .project-meta:after, .simple-pricing-table .featured .button, .jta-tweet-list-controls span:hover, .simple-pricing-table.type-1 .title, .gallery-slider-nav:hover a:hover, .color-1.scribble .team-entry:hover:after, .scribble .tabs-nav .active:after, .post-slider-nav:hover a:hover, .flex-direction-nav a:hover, .portfolio-controls a:hover, .acc-trigger.active:before, .detail-box .transform, .ajax-nav li:hover > a, .jcarousel-prev:hover, .jcarousel-next:hover, .wp-pagenavi .current, .button.default:hover, .flexslider .caption, .ajax-nav .current a, ul.type-1 li:before, .quotes-nav a:hover, #back-top:hover, .dropcap.color, i.small-arrows, .curtain, .highlight, .button.default:hover	{background-color: #".theme_get_setting('custom_color')." !important; }</style> ",
-    '#weight' => 3,
-  );
-  
-  $custom_border_color = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>.portfolio-items article:hover .project-meta, .projects-carousel li:hover > a, .ajax-nav li:hover:before, .ajax-nav .current:before, .tabs-nav .active, .team-entry:hover{border-color: #".theme_get_setting('custom_color')." }</style> ",
-    '#weight' => 4,
-  );
-  
-  $moz_highlight = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>::-moz-selection {background-color: #".theme_get_setting('custom_color')." }</style> ",
-    '#weight' => 5,
-  );
-  
-  $other_highlight = array(
-    '#type' => 'markup',
-    '#markup' => "<style type='text/css'>::selection {background-color: #".theme_get_setting('custom_color')." }</style> ",
-    '#weight' => 6,
+    '#markup' => "<style type='text/css'>.navigation > div > ul > li:hover > a, .navigation > div > ul > li.current-menu-item > a, .navigation > div > ul > li.current-menu-parent > a, .navigation > div > ul > li.current-menu-ancestor > a, .navigation > div > ul > li.current_page_item > a, .navigation > div > ul > li.current_page_parent > a, .navigation > div > ul > li.current_page_ancestor > a, .color-12.scribble .projects-carousel li:hover > a:after, .simple-pricing-table.type-2 .featured .price, .color-12.scribble article:hover .project-meta:after, .simple-pricing-table .featured .button, .jta-tweet-list-controls span:hover, .simple-pricing-table.type-1 .title, .gallery-slider-nav:hover a:hover, .color-12.scribble .team-entry:hover:after, .color-12.scribble .tabs-nav .active:after, .post-slider-nav:hover a:hover, .flex-direction-nav a:hover, .portfolio-controls a:hover, .acc-trigger.active:before, #layerslider .inline-h2, .detail-box .transform, .ajax-nav li:hover > a, .jcarousel-prev:hover, .jcarousel-next:hover, .wp-pagenavi .current, .button.default:hover, .flexslider .caption, .ajax-nav .current a, 
+ul.type-1 li:before, .quotes-nav a:hover, #back-top:hover, .dropcap.color, i.small-arrows, .curtain {background: #".theme_get_setting('custom_color')." !important;}</style> ",
   );
   
   $background_color = array(
     '#type' => 'markup',
     '#markup' => "<style type='text/css'>body {background-color: #".theme_get_setting('body_background_color')." !important; background-image: none !important;}</style> ",
+    '#weight' => 8,
   );
-  
-  if ( theme_get_setting('black_and_white') == '1' ) {
-  
-	  $black_and_white = array(
-	    '#type' => 'markup',
-	    '#markup' => "
-	      <script type='text/javascript'>
-	      var objBlackAndWhite  = {
-					hoverEffect: true, // default true
-					// set the path to BnWWorker.js for a superfast implementation
-					webworkerPath: '',
-					// for the images with a fluid width and height 
-					responsive: true,
-					invertHoverEffect: false,
-					speed: {//this property could also be just speed: value for both fadeIn and fadeOut
-						fadeIn: 400, // 400ms for fadeIn animations
-						fadeOut: 800 // 800ms for fadeOut animations
-					}
-		    };
-		  </script>  
-	    ",
-	  );
-  
-  }
-  
-  else {
-	  
-	  $black_and_white = array(
-    '#type' => 'markup',
-    '#markup' => "
-      <script type='text/javascript'>
-      var objBlackAndWhite  = {
-				hoverEffect: false, // default true
-				// set the path to BnWWorker.js for a superfast implementation
-				webworkerPath: '',
-				// for the images with a fluid width and height 
-				responsive: true,
-				invertHoverEffect: true,
-				speed: {//this property could also be just speed: value for both fadeIn and fadeOut
-					fadeIn: 400, // 400ms for fadeIn animations
-					fadeOut: 800 // 800ms for fadeOut animations
-				}
-	    };
-	  </script>  
-    ",
-  );
-	  
-  }
   
   drupal_add_html_head( $viewport, 'viewport');
   
-  drupal_add_html_head( $black_and_white, 'black_and_white');
-  
   if (theme_get_setting('color_scheme') == "custom") {
     drupal_add_html_head( $custom_color, 'custom_color' );
-    drupal_add_html_head( $custom_border_color, 'custom_border_color' );
-    drupal_add_html_head( $moz_highlight , 'moz_highlight ' );
-    drupal_add_html_head( $other_highlight , 'other_highlight ' );
-    drupal_add_html_head( $custom_background_color, 'custom_background_color' );
   }
   
   if (theme_get_setting('body_background') == "custom_background_color") {
