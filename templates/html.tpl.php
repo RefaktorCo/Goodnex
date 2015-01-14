@@ -19,7 +19,7 @@ not-ie" lang="<?php print $language->language; ?>" dir="<?php print $language->d
   
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
 <!-- Google Web Fonts

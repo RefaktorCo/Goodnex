@@ -74,7 +74,7 @@ ul.clients-items li,
 	color: #b2b2b2;
 }
 
-#contact-site-form label, .comment-form label {
+.contact-form label, .comment-form label {
 	display: inline-block;
 }
 
@@ -189,18 +189,22 @@ header h1 {
 
 #comments .form-item-name:before, .contact-form .form-item-name:before { 
 	content: "\f007";
+	z-index: 100;
 }
 
 .contact-form .form-item-mail:before { 
   content: "\f0e0";
+  z-index: 100;
 }
 
 #comments .form-item-subject:before, .contact-form .form-item-subject:before, .comment-form .form-item-subject:before { 
 	content: "\f0e5";
+	z-index: 100;
 }
 
 #comment-body-add-more-wrapper:before, .contact-form .form-item-message:before {
 	content: "\f040";
+	z-index: 100;
 }
 
 #comment-body-add-more-wrapper .form-type-textarea label, .contact-form .form-item-message label {
