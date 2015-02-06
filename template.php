@@ -11,8 +11,8 @@ $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
  */
 function goodnex_js_alter(&$js) {
   if (isset($js['misc/jquery.js'])) {
-       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
-       $js['misc/jquery.js']['version'] = '1.7.2';
+       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
+       $js['misc/jquery.js']['version'] = '1.8.2';
     $js['misc/jquery.js']['data'] = $jsPath;
   }
 }
