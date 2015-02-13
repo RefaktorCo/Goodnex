@@ -238,7 +238,6 @@ function goodnex_block_view_alter(&$data, $block) {
 	  $data['content']['actions']['submit']['#prefix'] = '<button type="submit" class="submit-search">';
 	  $data['content']['actions']['submit']['#suffix'] = '</button>';
 	  $data['content']['actions']['submit']['#markup'] = 'search';
-	  dpm($data);
 	}
 
   if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {   
