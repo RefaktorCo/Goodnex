@@ -1,8 +1,13 @@
-1.1.4 (01/14/15)
+1.1.5 (02/12/15)
+  *Fixed bug where menu descriptions appear next to menu title.
+  *Modified appearance of search block outside of "Header Search" region.
+
+1.1.4 (02/10/15)
   *Updated Drupal Core in full install.
   *Removed http: prefix from html5.js call in html.tpl for HTTPS compatibility.
   *Fixed contact/comment form styling bugs.
   *Header navigation markup/style now only applies to menus in the "Header Menu" region.
+  *Updated MD Slider.
   
 1.1.3 (11/06/14)
   *Updated Drupal Core in full install.

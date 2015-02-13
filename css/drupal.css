@@ -245,6 +245,11 @@ header h1 {
   display: none;
 }
 
+#sidebar #search-block-form input[type="text"] {
+	width: 69%;
+	margin-bottom: 10px;
+}
+
 .portfolio-controls {
 	margin-top: -105px;
 	position: absolute;

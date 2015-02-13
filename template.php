@@ -91,32 +91,6 @@ function goodnex_preprocess_page(&$vars, $hook) {
   }
 }
 
-/**
- * Impelements hook_form_alter()
- */
-function goodnex_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'search_block_form') {
-    $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
-    $form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
-    $form['search_block_form']['#size'] = 40;  // define size of the textfield
-    $form['search_block_form']['#default_value'] = t('Search'); // Set a default value for the textfield
-    $form['actions']['submit'] =  array(
-      '#type' => 'submit',
-    	'#prefix' => '<button type="submit" class="submit-search">',
-    	'#suffix' => '</button>',
-    	'#markup' => 'search',
-    );
-
-    // Add extra attributes to the text box
-    $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Search';}";
-    $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Search') {this.value = '';}";
-    // Prevent user from searching the default text
-    $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Search'){ alert('Please enter a search'); return false; }";
-
-    // Alternative (HTML5) placeholder attribute instead of using the javascript
-    $form['search_block_form']['#attributes']['placeholder'] = t('Search');
-  }
-} 
 
 /**
 * Implements hook_form_contact_site_form_alter().
@@ -207,12 +181,6 @@ function goodnex_menu_link__header_menu(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
   
-  // Add support for HTML output in menu descriptions
-  $element['#localized_options']['html'] = TRUE;
-  if ($element['#original_link']['menu_name'] == "main-menu" && isset($element['#localized_options']['attributes']['title'])){
-    $element['#title'] .= $element['#localized_options']['attributes']['title'] ;
-  }
-  
   if($variables['element']['#attributes']) {
     $sub_menu = '';
   }
@@ -239,9 +207,39 @@ function goodnex_menu_tree__header_menu(&$variables) {
 }
 
 /**
+ * Impelements hook_form_alter()
+ */
+function goodnex_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    $form['search_block_form']['#title'] = t('Search'); // Change the text on the label element
+    $form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
+    $form['search_block_form']['#size'] = 40;  // define size of the textfield
+    $form['search_block_form']['#default_value'] = t('Search'); // Set a default value for the textfield
+   
+    // Add extra attributes to the text box
+    $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Search';}";
+    $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Search') {this.value = '';}";
+    // Prevent user from searching the default text
+    $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Search'){ alert('Please enter a search'); return false; }";
+
+    // Alternative (HTML5) placeholder attribute instead of using the javascript
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search');
+  }
+} 
+
+/**
  * Implements hook_block_view_alter().
  */
 function goodnex_block_view_alter(&$data, $block) {
+	
+	if ($block->region == 'header_search' && isset($data['content']['search_block_form'])) {
+	  unset($data['content']['actions']['submit']);
+	  $data['content']['actions']['submit']['#type'] = 'submit';
+	  $data['content']['actions']['submit']['#prefix'] = '<button type="submit" class="submit-search">';
+	  $data['content']['actions']['submit']['#suffix'] = '</button>';
+	  $data['content']['actions']['submit']['#markup'] = 'search';
+	  dpm($data);
+	}
 
   if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {   
     $data['content']['#theme_wrappers'] = array('menu_tree__header_menu');
