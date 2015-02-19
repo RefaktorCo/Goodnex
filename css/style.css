@@ -2267,8 +2267,7 @@ body.boxed { background-attachment: fixed; }
 			
 			.preloader.loader { background-image: url(../images/preloader.gif); }
 			
-				.preloader img:not(.BWFilter) {
-					opacity: 0;
+				.preloader img:not(.BWFilter) {					
 					-webkit-transition: all .25s linear;
 					   -moz-transition: all .25s linear;
 							transition: all .25s linear;
@@ -2315,6 +2314,7 @@ body.boxed { background-attachment: fixed; }
 			} 
 			
 			.project-meta .categories { display: block; }
+
 			
 	/* -------------------------------------------------- */
 	/*	Portfolio Controls
