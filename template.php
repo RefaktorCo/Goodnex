@@ -224,6 +224,7 @@ function goodnex_form_alter(&$form, &$form_state, $form_id) {
 
     // Alternative (HTML5) placeholder attribute instead of using the javascript
     $form['search_block_form']['#attributes']['placeholder'] = t('Search');
+
   }
 } 
 
@@ -233,11 +234,7 @@ function goodnex_form_alter(&$form, &$form_state, $form_id) {
 function goodnex_block_view_alter(&$data, $block) {
 	
 	if ($block->region == 'header_search' && isset($data['content']['search_block_form'])) {
-	  unset($data['content']['actions']['submit']);
-	  $data['content']['actions']['submit']['#type'] = 'submit';
-	  $data['content']['actions']['submit']['#prefix'] = '<button type="submit" class="submit-search">';
-	  $data['content']['actions']['submit']['#suffix'] = '</button>';
-	  $data['content']['actions']['submit']['#markup'] = 'search';
+	  $data['content']['actions']['#attributes']['class'][] = 'submit-search';
 	}
 
   if ( ($block->region == 'header_menu') && !isset($data['content']['#type']) ) {   

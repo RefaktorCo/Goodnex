@@ -1,7 +1,7 @@
 <li class="four columns">
   <?php if (render($content['field_image'])): ?>  
 	<div class="preloader">
-		<a href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" class="bwWrapper single-image plus-icon" rel="jcarousel"> 
+		<a href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" class="bwWrapper single-image plus-icon" > 
 			<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" />
 		</a>	
 	</div><!--/ .preloader-->

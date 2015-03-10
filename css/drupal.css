@@ -94,6 +94,10 @@ margin: 2em 0em 1em 0;
 	display: block;
 }
 
+.search-wrapper .submit-search {
+	cursor: pointer;
+}
+
 .search-advanced {
 	margin: 20px 0px;
 }

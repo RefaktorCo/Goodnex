@@ -24,7 +24,7 @@ not-ie" lang="<?php print $language->language; ?>" dir="<?php print $language->d
 
 <!-- Google Web Fonts
 ================================================== -->
-<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,600italic|Handlee' rel='stylesheet' type='text/css'>  
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,600italic' rel='stylesheet' type='text/css'>  
 	
 <?php goodnex_user_css(); ?>  
 

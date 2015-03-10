@@ -28,7 +28,6 @@
  */
 ?>
 <div class="widget widget_recent_entries">
-  <ul>
 	  <?php print render($title_prefix); ?>
 	  <?php if ($title): ?>
 	    <?php print $title; ?>
@@ -87,5 +86,4 @@
 	      <?php print $feed_icon; ?>
 	    </div>
 	  <?php endif; ?>
-  </ul>
 </div><?php /* class view */ ?>
