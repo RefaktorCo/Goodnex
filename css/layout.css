@@ -99,7 +99,7 @@
 
 				.comments-form label,
 				.contact-form label {
-					display: block;
+					display: inline;
 					margin-top: 10px;
 					margin-left: 0;
 				}
