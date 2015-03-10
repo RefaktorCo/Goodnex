@@ -1,3 +1,7 @@
+var objNavMenu = {
+	fixed: true // Boolean:  (true/false)
+};
+
 (function ($, win, Modernizr, nav, doc) {
 
 $.fn.headerToFixed = function (options) {
