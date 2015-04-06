@@ -6,16 +6,7 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
 
-/**
- * Modify theme_js_alter()
- */
-function goodnex_js_alter(&$js) {
-  if (isset($js['misc/jquery.js'])) {
-       $jsPath = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';
-       $js['misc/jquery.js']['version'] = '1.7.2';
-    $js['misc/jquery.js']['data'] = $jsPath;
-  }
-}
+
 
 /**
  * Modify theme_html_head_alter()
