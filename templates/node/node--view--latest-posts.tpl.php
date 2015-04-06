@@ -33,10 +33,7 @@ if ($items = field_get_items('node', $node, 'field_image')) {
 	<?php endif; ?>
 	
 	<?php if (render($content['field_before_title'])) : ?>
-	    
-	    <a href="http://google.com">
 	    <?php print render($content['field_before_title']); ?>
-	    </a>
 	<?php endif; ?>
 
 	<h6 class="title"><a href="<?php echo $node_url; ?>"><?php echo substr($title, 0, 40); ?></a></h6>
