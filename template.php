@@ -6,8 +6,6 @@ global $theme_root, $parent_root, $theme_path;
 $theme_root = base_path() . path_to_theme();
 $parent_root = base_path() . drupal_get_path('theme', 'goodnex');
 
-
-
 /**
  * Modify theme_html_head_alter()
  */
