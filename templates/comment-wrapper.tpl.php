@@ -11,12 +11,10 @@
     	<h6><?php print $node->comment_count; ?> <?php print t('Comments'); ?> </h6>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
-  
-   <?php if ($content['comments'] && $node->type != 'forum'): ?>
+ 
   <div class="comments-content-wrap">
     <?php print render($content['comments']); ?>
   </div>  
-  <?php endif; ?>
 
   <?php if ($content['comment_form']): ?>
   <div class="post-block post-leave-comment">
