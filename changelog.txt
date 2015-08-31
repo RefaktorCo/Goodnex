@@ -1,3 +1,9 @@
+1.1.6 (09/01/15)
+  *Updated Drupal core in full install.
+  *Updated MD Slider.
+  *Removed theme jQuery Update function in favor of contrib module. 
+  *General bug fixes and style updates.
+
 1.1.5 (02/12/15)
   *Fixed bug where menu descriptions appear next to menu title.
   *Modified appearance of search block outside of "Header Search" region.
