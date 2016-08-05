@@ -15,7 +15,7 @@
 			var	arrowimages = {
 				down: 'downarrowclass',
 				right: 'rightarrowclass'
-			}, $mainNav = $('#navigation'), $mainList  = $mainNav.find('ul').eq(0), optionsList = '<option value="" selected>Navigate...</option>', $submenu = $mainList.find("ul").parent();
+			}, $mainNav = $('#navigation'), $mainList  = $mainNav.find('ul').eq(0), optionsList = '<option value="" selected>' + Drupal.t('Navigate...') + '</option>', $submenu = $mainList.find("ul").parent();
 
 			$submenu.each(function (i) {
 				var $curobj = $(this);
@@ -79,24 +79,7 @@
 			}
 		}());
 
-		/* ---------------------------------------------------------------------- */
-		/*	Detect Touch Device													  */
-		/* ---------------------------------------------------------------------- */
-
-		(function () {
-
-			if (Modernizr.touch) {
-				$('body').addClass('touch-device');
-			}
-
-			if ($.browser.safari === true) {
-				$('body').addClass('safari');
-			}
-
-		}());
-
-		/* end Detect Touch Device */
-
+		
 		/*--------------------------------------------------------------------*/
 		/* Flex Slider														  */
 		/*--------------------------------------------------------------------*/

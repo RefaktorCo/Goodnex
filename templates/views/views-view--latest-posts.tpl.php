@@ -31,7 +31,7 @@
 <div class="divider-solid"></div>
 			
 <div class="twelve columns">
-  <h4 class="content-title"><?php echo t('Latest From Our Blog'); ?></h4>
+  
   
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>

@@ -11,7 +11,7 @@
     
       <div class="eight columns">
 
-	      <?php if (render($page['header_left'])) : ?>
+	      <?php if ($page['header_left']) : ?>
 		      <?php print render($page['header_left']); ?>
 		    <?php endif; ?>
 	    
@@ -27,9 +27,9 @@
 		      <div id="name-and-slogan"<?php if ($disable_site_name && $disable_site_slogan) { print ' class="hidden"'; } ?>>
 		
 		        <?php if ($title): ?>
-	            <div id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
+	            <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
 		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-		          </div>
+		          </h1>
 	          <?php else: /* Use h1 when the content title is empty */ ?>
 		          <h1 id="site-name"<?php if ($disable_site_name) { print ' class="hidden"'; } ?>>
 		            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
@@ -46,7 +46,7 @@
 		    
       </div>
       
-      <?php if (render($page['header_right'])) : ?>
+      <?php if ($page['header_right']) : ?>
       <div class="eight columns">
         <?php print render($page['header_right']); ?>
       </div> 
@@ -62,7 +62,7 @@
 					  </div>  
 					</nav>
 						
-					<?php if (render($page['header_search']) ): ?>
+					<?php if ($page['header_search']): ?>
 					<div class="search-wrapper">
 					  <?php print render($page['header_search']); ?>
 					</div><!--/ .search-wrapper--> 
@@ -116,8 +116,8 @@
 	          <?php print render($action_links); ?>
 	        </ul>
 	      <?php endif; ?>
-	  
-			  <?php if (isset($page['content'])) { print render($page['content']); } ?>
+	 
+			  <?php print render($page['content']); ?>
 			  
 			<?php if ( ($page['sidebar_right']) OR ($page['sidebar_left']) ): ?>
 		  </section>
@@ -131,7 +131,7 @@
 		    
     </div>
     
-    <?php if (render($page['after_content'])) : ?> 
+    <?php if ($page['after_content']) : ?> 
     <div id="after-content" class="container">
       <?php print render($page['after_content']); ?>
     </div>
@@ -144,25 +144,25 @@
   <footer id="footer">
     <div class="container">
 		  
-		  <?php if (isset($page['footer_1'])) : ?> 
+		  <?php if ($page['footer_1']) : ?> 
 	      <div class="four columns">
 			    <?php print render($page['footer_1']); ?>
 	      </div>
 	    <?php endif; ?>
 	    
-	    <?php if (isset($page['footer_2'])) : ?> 
+	    <?php if ($page['footer_2']) : ?> 
 	      <div class="four columns">
 			    <?php print render($page['footer_2']); ?>
 	      </div>
 	    <?php endif; ?>
 	    
-	    <?php if (isset($page['footer_3'])) : ?> 
+	    <?php if ($page['footer_3']) : ?> 
 	      <div class="four columns">
 			    <?php print render($page['footer_3']); ?>
 	      </div>
 	    <?php endif; ?>
 	    
-	    <?php if (isset($page['footer_4'])) : ?> 
+	    <?php if ($page['footer_4']) : ?> 
 	      <div class="four columns">
 			    <?php print render($page['footer_4']); ?>
 	      </div>
@@ -173,7 +173,7 @@
       <div class="sixteen columns">
         <div class="adjective clearfix">
 		   		    
-				  <?php if (render($page['footer_bottom'])) : ?>
+				  <?php if ($page['footer_bottom']) : ?>
 				    <?php print render($page['footer_bottom']); ?>
 				  <?php endif; ?>
 		  
@@ -181,5 +181,4 @@
       </div>
 	  </div>  
 	</footer>
-	
 </div>

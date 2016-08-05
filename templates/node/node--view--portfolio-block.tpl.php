@@ -5,7 +5,7 @@ $cat = str_replace($search, $replace, strip_tags(render($content['field_portfoli
 $replacement = " ";
 ?>
 
-<article class="<?php echo theme_get_setting('portfolio_columns');?>" data-categories="<?php print strip_tags(render($content['field_portfolio_category'])); ?> <?php print strip_tags(render($content['field_portfolio_category_test'])); ?>">
+<article class="<?php echo theme_get_setting('portfolio_columns');?>" data-categories="<?php print strip_tags(render($content['field_portfolio_category'])); ?>">
 
   <?php if (render($content['field_image'])): ?>  
 	<div class="preloader">
