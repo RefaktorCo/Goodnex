@@ -36,7 +36,7 @@ $counter = count($items);
 			      <li>
 						  <div class="preloader">
 								<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
-									<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="" >
+									<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="<?php print $node->field_image['und'][0]['alt']; ?>" >
 								</a>						
 							</div>
 			      </li>
@@ -48,7 +48,7 @@ $counter = count($items);
 		<?php if ($image_slide == 'false'): ?>
 		  <div class="preloader">
 				<a class="bwWrapper single-image link-icon" href="<?php print $node_url; ?>">
-					<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
+					<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="<?php print $node->field_image['und'][0]['alt']; ?>" >
 				</a>						
 			</div>
 		<?php endif; ?>
@@ -64,7 +64,7 @@ $counter = count($items);
 			      <li>
 						  <div class="preloader">
 								<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" rel="gallery">
-									<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="" >
+									<img src="<?php echo file_create_url($node->field_image['und'][$img_count]['uri']); ?>" alt="<?php print $node->field_image['und'][0]['alt']; ?>" >
 								</a>						
 							</div>
 			      </li>
@@ -76,7 +76,7 @@ $counter = count($items);
 		<?php if ($image_slide == 'false'): ?>
 		  <div class="preloader">
 				<a class="bwWrapper single-image plus-icon" href="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>">
-					<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="" >
+					<img src="<?php echo file_create_url($node->field_image['und'][0]['uri']); ?>" alt="<?php print $node->field_image['und'][0]['alt']; ?>" >
 				</a>						
 			</div>
 		<?php endif; ?>
